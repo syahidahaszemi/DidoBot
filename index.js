@@ -2,9 +2,9 @@
 const { Composer } = require('micro-bot')
 const bot = new Composer
 
-bot.start((ctx) => {
+/*bot.start((ctx) => {
     ctx.reply('Hello apa khabar')
-})
+})*/
 
 // shrouded-springs-65878 id heroku
 // https://shrouded-springs-65878.herokuapp.com/ and https://git.heroku.com/shrouded-springs-65878.git server heroku
@@ -17,11 +17,12 @@ const axios = require('axios');
 //database//
 const mysql = require('mysql');
 
+//mysql://b1d5a4ba692efd:68747ae9@us-cdbr-east-02.cleardb.com/heroku_5be77b62e4f10d6?reconnect=true
 const conn = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "didobot"
+    host: "us-cdbr-east-02.cleardb.com",
+    user: "b1d5a4ba692efd",
+    password: "68747ae9",
+    database: "dheroku_5be77b62e4f10d6"
 })
 
 dbcon();
@@ -148,7 +149,7 @@ bot.action('boleh', ctx => {
 //callbackdata boleh//
 
 //mood//
-bot.action('startmood', ctx => {
+bot.command('startmood', ctx => {
     bot.telegram.sendMessage(ctx.chat.id, "Sila taip /mood *mood awak* daripada pilihan yang di bawah ini",
     {
         reply_markup: {
@@ -649,7 +650,7 @@ bot.action('nak', ctx => {
         reply_markup: {
             inline_keyboard: [
                 [
-                    { text: 'Nak', callback_data: '/fortune'},
+                    { text: 'Nak (/fortune)', callback_data: 'fortune'},
                     { text: 'Tidak mengapa', callback_data: 'bye'}
                 ]
             ]
@@ -664,13 +665,13 @@ bot.command('fortune', ctx => {
    }).catch(e => {
        console.log(e);
    })
-   //bot.telegram.sendMessage(ctx.chat.id, 'Apa pendapat awak mengenai perbualan hari ini? (Baik/TidakBaik) [Contoh: /feedback Baik]');       
+   bot.telegram.sendMessage(ctx.chat.id, 'Apa pendapat awak mengenai perbualan hari ini? (Baik/TidakBaik) [Contoh: /feedback Baik]');       
 })
 
 //random quotes//
 
 //feedback//
-bot.action('feedback', ctx => {
+bot.command('feedback', ctx => {
     let input = ctx.message.text.split(" ");
     if(input.length != 2){
         ctx.reply("Anda harus memberi nama mood pada argument ke 2");
@@ -865,7 +866,6 @@ bot.action('4', ctx => {
     })
 })
 //borak//
-
 
 //bot.launch();
 module.exports = bot

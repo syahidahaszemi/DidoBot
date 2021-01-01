@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "micro-bot",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "sdasadasd"
+    
   },
   "keywords": [],
   "author": "",
