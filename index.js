@@ -87,6 +87,7 @@ bot.command('helpSOS', ctx => {
 //welcome//
 bot.command('start', (ctx) => {
     bot.telegram.sendMessage(ctx.chat.id, "Halo! Apa khabar awak! Saya Dido!");
+    ctx.reply(helpMessage);
     bot.telegram.sendMessage(ctx.chat.id, "Adakah awak pertama kali berbual dengan saya?",
     {
         reply_markup: {
