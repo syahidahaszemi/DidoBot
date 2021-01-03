@@ -158,7 +158,7 @@ bot.action('boleh', ctx => {
 
 //mood//
 bot.command('startmood', ctx => {
-    bot.telegram.sendMessage(ctx.chat.id, "Sila taip /mood *mood awak* daripada pilihan yang di bawah ini",
+    bot.telegram.sendMessage(ctx.chat.id, "Sila taip /mood *mood awak* daripada pilihan yang di bawah ini. Contoh: /mood Kemurungan",
     {
         reply_markup: {
             inline_keyboard: [
@@ -238,6 +238,7 @@ bot.action('moodsurvey', ctx => {
 bot.action('S_1', ctx => {
     ctx.deleteMessage();
     bot.telegram.sendMessage(ctx.chat.id, `Sila jawab soalan dengan /S1 *jawapan* Contoh: /S1 ya
+
     Soalan 1:
     Jadi, anda sekarang ada ahli terapi? (ya/tidak)`);
 })
@@ -271,7 +272,8 @@ bot.command('S1', ctx => {
 
 bot.action('S_2', ctx => {
     ctx.deleteMessage();
-    bot.telegram.sendMessage(ctx.chat.id, ` 
+    bot.telegram.sendMessage(ctx.chat.id, `Sila jawab soalan dengan /S2 *jawapan* Contoh: /S2 tidak 
+
     Soalan 2:
     Adakah doktor atau ahli terapi anda sarankan aplikasi mudah alih? (ya/tidak)`);
 })
@@ -305,7 +307,8 @@ bot.command('S2', ctx => {
 
 bot.action('S_3', ctx => {
     ctx.deleteMessage();
-    bot.telegram.sendMessage(ctx.chat.id, `
+    bot.telegram.sendMessage(ctx.chat.id, `Sila jawab soalan dengan /S3 *jawapan* Contoh: /S3 tidak
+
     Soalan 3:
     Adakah anda pernah didiagnosis dengan keadaan kesihatan mental? (ya/tidak)`);
 })
@@ -339,7 +342,8 @@ bot.command('S3', ctx => {
 
 bot.action('S_4', ctx => {
     ctx.deleteMessage();
-    bot.telegram.sendMessage(ctx.chat.id, `
+    bot.telegram.sendMessage(ctx.chat.id, `Sila jawab soalan dengan /S4 *jawapan* Contoh: /S4 ya
+
     Soalan 4:
     Adakah anda sedang mengambil ubat-ubatan untuk keadaan kesihatan mental? (ya/tidak)`);
 })
@@ -373,7 +377,8 @@ bot.command('S4', ctx => {
 
 bot.action('S_5', ctx => {
     ctx.deleteMessage();
-    bot.telegram.sendMessage(ctx.chat.id, `
+    bot.telegram.sendMessage(ctx.chat.id, `Sila jawab soalan dengan /S5 *jawapan* Contoh: /S5 tidak
+
     Soalan 5:
     Adakah anda pernah mengguna aplikasi seperti Dido ini? (ya/tidak)`);
 })
@@ -407,7 +412,8 @@ bot.command('S5', ctx => {
 
 bot.action('S_6', ctx => {
     ctx.deleteMessage();
-    bot.telegram.sendMessage(ctx.chat.id, `
+    bot.telegram.sendMessage(ctx.chat.id, `Sila jawab soalan dengan /S6 *jawapan* Contoh: /S6 ya
+
     Soalan 6:
     Adakah anda rasa Dido dapat membantu anda? (ya/tidak)`);
 })
@@ -441,7 +447,8 @@ bot.command('S6', ctx => {
 
 bot.action('S_7', ctx => {
     ctx.deleteMessage();
-    bot.telegram.sendMessage(ctx.chat.id, `
+    bot.telegram.sendMessage(ctx.chat.id, `Sila jawab soalan dengan /S7 *jawapan* Contoh: /S7 b
+
     Soalan 7:
     Okay, sekarang saya akan tanya soalan khusus tentang apa yang anda rasa
     Sejak 2 minggu kebelakangan ini, seberapa kerap anda terganggu dengan masalah berikut:
@@ -484,7 +491,7 @@ bot.command('S7', ctx => {
 
 bot.action('S_8', ctx => {
     ctx.deleteMessage();
-    bot.telegram.sendMessage(ctx.chat.id, `
+    bot.telegram.sendMessage(ctx.chat.id, `Sila jawab soalan dengan /S8 *jawapan* Contoh: /S8 c
     Soalan 8:
     Dan sejak 2 minggu kebelakangan ini, berapa kali anda terganggu dengan perasaan sedih, murung, atau putus asa?
 
@@ -525,7 +532,7 @@ bot.command('S8', ctx => {
 
 bot.action('S_9', ctx => {
     ctx.deleteMessage();
-    bot.telegram.sendMessage(ctx.chat.id, `
+    bot.telegram.sendMessage(ctx.chat.id, `Sila jawab soalan dengan /S9 *jawapan* Contoh: /S9 a
     Soalan 9:
     Dan sejak 2 minggu kebelakangan ini, berapa kali anda terganggu dengan perasaan gelisah, gementar, terdesak, atau tidak dapat berhenti atau mengawal kebimbangan?
     
@@ -566,7 +573,8 @@ bot.command('S9', ctx => {
 
 bot.action('S_10', ctx => {
     ctx.deleteMessage();
-    bot.telegram.sendMessage(ctx.chat.id, `
+    bot.telegram.sendMessage(ctx.chat.id, `Sila jawab soalan dengan /S10 *jawapan* Contoh: /S10 ya
+
     Soalan 10:
     Adakah anda ok pada ketika ini?
     (ya/tidak)`);
@@ -601,7 +609,7 @@ bot.command('S10', ctx => {
 
 bot.action('S_11', ctx => {
     ctx.deleteMessage();
-    bot.telegram.sendMessage(ctx.chat.id, `
+    bot.telegram.sendMessage(ctx.chat.id, `Sila jawab soalan dengan /S11 *jawapan* Contoh: /S11 22
     Soalan 11:
     Berapakah umur anda?`);
 })
