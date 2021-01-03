@@ -4,9 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "micro-bot",
-    "test": "sdasadasd"
-    
+    "start": "micro-bot"
   },
   "keywords": [],
   "author": "",
