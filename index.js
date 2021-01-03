@@ -1,6 +1,6 @@
-//const Telegraf = require('telegraf');
-const { Composer } = require('micro-bot')
-const bot = new Composer
+const Telegraf = require('telegraf');
+//const { Composer } = require('micro-bot')
+//const bot = new Composer
 
 /*bot.start((ctx) => {
     ctx.reply('Hello apa khabar')
@@ -9,7 +9,7 @@ const bot = new Composer
 // shrouded-springs-65878 id heroku
 // https://shrouded-springs-65878.herokuapp.com/ and https://git.heroku.com/shrouded-springs-65878.git server heroku
 
-//const bot = new Telegraf('1410566262:AAFHgqkaSFVYeQU5liSJ1_VGWACn2pWuh3Q');
+const bot = new Telegraf('1410566262:AAFHgqkaSFVYeQU5liSJ1_VGWACn2pWuh3Q');
 
 const axios = require('axios');
 
@@ -19,14 +19,14 @@ const mysql = require('mysql');
 
 //mysql://b1d5a4ba692efd:68747ae9@us-cdbr-east-02.cleardb.com/heroku_5be77b62e4f10d6?reconnect=true
 const conn = mysql.createConnection({
-    /*host: "localhost",
-    user: "root",
-    password: " ",
-    database: "didobot"*/
+    // host: "localhost",
+    // user: "root",
+    // password: " ",
+    // database: "didobot"
     host: "us-cdbr-east-02.cleardb.com",
     user: "b1d5a4ba692efd",
     password: "68747ae9",
-    database: "dheroku_5be77b62e4f10d6"
+    database: "heroku_5be77b62e4f10d6"
 })
 
 dbcon();
@@ -871,8 +871,8 @@ bot.action('4', ctx => {
 })
 //borak//
 
-//bot.launch();
-module.exports = bot
+bot.launch();
+//module.exports = bot
 
 /*function sendStartMessage(ctx){
     let startMessage = 'Selamat datang, bot ini memberikan informasi mengenai mata wang crypto';
