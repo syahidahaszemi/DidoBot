@@ -18,7 +18,7 @@ const axios = require('axios');
 const mysql = require('mysql');
 
 //mysql://b1d5a4ba692efd:68747ae9@us-cdbr-east-02.cleardb.com/heroku_5be77b62e4f10d6?reconnect=true
-const db_config = {
+const conn = mysql.createConnection({
     // host: "localhost",
     // user: "root",
     // password: " ",
@@ -27,16 +27,8 @@ const db_config = {
     user: "b1d5a4ba692efd",
     password: "68747ae9",
     database: "heroku_5be77b62e4f10d6"
-};
-
-dbcon();
-
-
-handleDisconnect();
-
-var conn;
+})
 function handleDisconnect() {
-    conn = mysql.createConnection(db_config); // Recreate the connection, since
                                                     // the old one cannot be reused.
   
     conn.connect(function(err) {              // The server is either down
@@ -56,12 +48,10 @@ function handleDisconnect() {
     });
   }
   
-
+  handleDisconnect();
+dbcon();
 function dbcon(){
-
-
-  
-
+    console.log("Connected !");
     conn.query("SELECT * FROM gettoknow", function (err, result, fields){
         if(err){
             throw err;
