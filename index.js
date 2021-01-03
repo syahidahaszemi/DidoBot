@@ -34,6 +34,7 @@ dbcon();
 
 handleDisconnect();
 
+var conn;
 function handleDisconnect() {
     conn = mysql.createConnection(db_config); // Recreate the connection, since
                                                     // the old one cannot be reused.
@@ -60,7 +61,7 @@ function dbcon(){
 
 
   
-    // console.log("Connected !");
+
     conn.query("SELECT * FROM gettoknow", function (err, result, fields){
         if(err){
             throw err;
