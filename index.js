@@ -229,9 +229,7 @@ bot.action('moodsurvey', ctx => {
                     { text: 'Tidak mengapa lah', callback_data: 'tidak'}
                 ],
                 [
-                    { text: `Saya nak borak dengan Dido 
-                    /borak - untuk memulakan`, 
-                    callback_data: 'borak'}
+                    { text: `Saya nak borak dengan Dido (/borak - untuk memulakan)`, callback_data: 'borak'}
                 ]
             ] 
         }
