@@ -19,10 +19,6 @@ const mysql = require('mysql');
 
 //mysql://b1d5a4ba692efd:68747ae9@us-cdbr-east-02.cleardb.com/heroku_5be77b62e4f10d6?reconnect=true
 const conn = mysql.createConnection({
-    // host: "localhost",
-    // user: "root",
-    // password: " ",
-    // database: "didobot"
     host: "us-cdbr-east-02.cleardb.com",
     user: "b1d5a4ba692efd",
     password: "68747ae9",
