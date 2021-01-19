@@ -216,7 +216,7 @@ bot.command('mood', ctx => {
 //mood survey//
 bot.action('moodsurvey', ctx => {
     //ctx.deleteMessage();
-    bot.telegram.sendMessage(ctx.chat.id, 'Jadi, awak! Sudi tak awak nak teruskan jawab beberapa soalan lagi dari saya? Saya nak kenal lagi dalam tentang awak!',
+    bot.telegram.sendMessage(ctx.chat.id, 'Jadi, awak! Sudi tak awak nak teruskan jawab beberapa soalan lagi dari saya? Saya nak kenal lagi lebih tentang awak!',
     {
         reply_markup: {
             inline_keyboard: [
