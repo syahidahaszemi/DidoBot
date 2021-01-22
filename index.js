@@ -720,7 +720,7 @@ bot.command('borak', ctx => {
             inline_keyboard: [
                 [
                     { text: 'Apa itu depresi?', callback_data: '1'},
-                    { text: '2', callback_data: '2'}
+                    { text: 'Fakta 2', callback_data: '2'}
                 ],
                 [
                     { text: '3', callback_data: '3'},
