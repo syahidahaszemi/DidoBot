@@ -719,12 +719,12 @@ bot.command('borak', ctx => {
         reply_markup: {
             inline_keyboard: [
                 [
-                    { text: `Fakta depresi`, callback_data: '1'},
-                    { text: `Fakta depresi`, callback_data: '2'}
+                    { text: '1', callback_data: '1'},
+                    { text: '2', callback_data: '2'}
                 ],
                 [
-                    { text: `Fakta depresi`, callback_data: '3'},
-                    { text: `Fakta depresi`, callback_data: '4'}
+                    { text: '3', callback_data: '3'},
+                    { text: '4', callback_data: '4'}
                 ]
             ] 
         }
@@ -737,12 +737,12 @@ bot.action('borak2', ctx => {
         reply_markup: {
             inline_keyboard: [
                 [
-                    { text: `Fakta depresi`, callback_data: '1'},
-                    { text: `Fakta depresi`, callback_data: '2'}
+                    { text: '1', callback_data: '1'},
+                    { text: '2', callback_data: '2'}
                 ],
                 [
-                    { text: `Fakta depresi`, callback_data: '3'},
-                    { text: `Fakta depresi`, callback_data: '4'}
+                    { text: '3', callback_data: '3'},
+                    { text: '4', callback_data: '4'}
                 ]
             ] 
         }
