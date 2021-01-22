@@ -723,7 +723,7 @@ bot.command('borak', ctx => {
                     { text: 'Fakta 2', callback_data: '2'}
                 ],
                 [
-                    { text: '3', callback_data: '3'},
+                    { text: 'Fakta 3', callback_data: '3'},
                     { text: '4', callback_data: '4'}
                 ]
             ] 
