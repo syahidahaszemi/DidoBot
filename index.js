@@ -724,7 +724,7 @@ bot.command('borak', ctx => {
                 ],
                 [
                     { text: 'Video depresi', callback_data: '3'},
-                    { text: 'Luahan', callback_data: '4'}
+                    { text: 'Luahan hati', callback_data: '4'}
                 ]
             ] 
         }
@@ -742,7 +742,7 @@ bot.action('borak2', ctx => {
                 ],
                 [
                     { text: 'Video depresi', callback_data: '3'},
-                    { text: 'Luahan', callback_data: '4'}
+                    { text: 'Luahan hati', callback_data: '4'}
                 ]
             ] 
         }
