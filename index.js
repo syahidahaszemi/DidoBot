@@ -719,12 +719,12 @@ bot.command('borak', ctx => {
         reply_markup: {
             inline_keyboard: [
                 [
-                    { text: 'Fakta simptom depresi', callback_data: '1'},
+                    { text: 'Fakta depresi', callback_data: '1'},
                     { text: 'Apa itu depresi?', callback_data: '2'}
                 ],
                 [
                     { text: 'Video berkenaan depresi!', callback_data: '3'},
-                    { text: 'Luahan hati', callback_data: '4'}
+                    //{ text: 'Luahan hati', callback_data: '4'}
                 ]
             ] 
         }
@@ -742,7 +742,7 @@ bot.action('borak2', ctx => {
                 ],
                 [
                     { text: 'Video berkenaan depresi!', callback_data: '3'},
-                    { text: 'Luahan hati', callback_data: '4'}
+                    //{ text: 'Luahan hati', callback_data: '4'}
                 ]
             ] 
         }
@@ -875,7 +875,7 @@ bot.action('video', ctx => {
     })
 })
 
-bot.action('4', ctx => {
+/*bot.action('4', ctx => {
     bot.telegram.sendMessage(ctx.chat.id, 'Hai awak, nak luahkan sesuatu?',
     {
         reply_markup: {
@@ -888,7 +888,7 @@ bot.action('4', ctx => {
             ]
         }
     })
-})
+})*/
 
 /*bot.command('luahan', ctx => {
     let input = ctx.message.text.split(" ");
