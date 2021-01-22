@@ -714,7 +714,7 @@ bot.command('bye', ctx => {
 
 //borak//
 bot.command('borak', ctx => {
-    bot.telegram.sendMessage(ctx.chat.id, 'Pilih satu dari pilihan di bawah ini',
+    bot.telegram.sendMessage(ctx.chat.id, 'Pilih salah satu dari pilihan di bawah ini',
     {
         reply_markup: {
             inline_keyboard: [
@@ -724,7 +724,7 @@ bot.command('borak', ctx => {
                 ],
                 [
                     { text: 'Video berkenaan depresi!', callback_data: '3'},
-                    //{ text: 'Luahan hati', callback_data: '4'}
+                    { text: 'Luahan hati', callback_data: '4'}
                 ]
             ] 
         }
@@ -742,7 +742,7 @@ bot.action('borak2', ctx => {
                 ],
                 [
                     { text: 'Video berkenaan depresi!', callback_data: '3'},
-                    //{ text: 'Luahan hati', callback_data: '4'}
+                    { text: 'Luahan hati', callback_data: '4'}
                 ]
             ] 
         }
@@ -875,7 +875,7 @@ bot.action('video', ctx => {
     })
 })
 
-/*bot.action('4', ctx => {
+bot.action('4', ctx => {
     bot.telegram.sendMessage(ctx.chat.id, 'Hai awak, nak luahkan sesuatu?',
     {
         reply_markup: {
@@ -888,17 +888,9 @@ bot.action('video', ctx => {
             ]
         }
     })
-})*/
+})
 
-/*bot.command('luahan', ctx => {
-    let input = ctx.message.text.split(" ");
-    if (input.length != 3){
-        ctx.reply("Luah dengan buat /luahan dan type 3 ayat tentang apa yang anda rasa");
-        return;
-    }
-    let luahan = input[1];
-    let luahan = input[1];
-})*/
+
 //borak//
 
 bot.launch();
