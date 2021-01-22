@@ -19,10 +19,10 @@ const mysql = require('mysql');
 
 //mysql://b1d5a4ba692efd:68747ae9@us-cdbr-east-02.cleardb.com/heroku_5be77b62e4f10d6?reconnect=true
 const conn = mysql.createConnection({
-    host: "us-cdbr-east-02.cleardb.com",
-    user: "b1d5a4ba692efd",
-    password: "68747ae9",
-    database: "heroku_5be77b62e4f10d6"
+    host: "us-cdbr-east-02.cleardb.com", 
+    user: "b1d5a4ba692efd", 
+    password: "68747ae9", 
+    database: "heroku_5be77b62e4f10d6" 
 })
 
 dbcon();
@@ -719,12 +719,12 @@ bot.command('borak', ctx => {
         reply_markup: {
             inline_keyboard: [
                 [
-                    { text: 'Apa itu depresi?', callback_data: '1'},
-                    { text: 'Fakta 2', callback_data: '2'}
+                    { text: 'Fakta simptom depresi', callback_data: '1'},
+                    { text: 'Apa itu depresi?', callback_data: '2'}
                 ],
                 [
-                    { text: 'Fakta 3', callback_data: '3'},
-                    { text: '4', callback_data: '4'}
+                    { text: 'Video berkenaan depresi!', callback_data: '3'},
+                    { text: 'Luahan hati', callback_data: '4'}
                 ]
             ] 
         }
@@ -737,12 +737,12 @@ bot.action('borak2', ctx => {
         reply_markup: {
             inline_keyboard: [
                 [
-                    { text: '1', callback_data: '1'},
-                    { text: '2', callback_data: '2'}
+                    { text: 'Fakta simptom depresi', callback_data: '1'},
+                    { text: 'Apa itu depresi?', callback_data: '2'}
                 ],
                 [
-                    { text: '3', callback_data: '3'},
-                    { text: '4', callback_data: '4'}
+                    { text: 'Video berkenaan depresi!', callback_data: '3'},
+                    { text: 'Luahan hati', callback_data: '4'}
                 ]
             ] 
         }
@@ -822,7 +822,7 @@ bot.action('pernah', ctx => {
         reply_markup: {
             inline_keyboard: [
                 [
-                    { text: 'Baik Dido', callback_data: 'borak2'},
+                    { text: 'Baik Dido', callback_data: 'borak2'}
                     //{ text: 'Saya nak luahkan sesuatu', callback_data: 'borak2'}
                 ]
             ]
@@ -852,7 +852,7 @@ bot.action('3', ctx => {
             inline_keyboard: [
                 [
                     { text: 'Nak', callback_data: 'video'},
-                    { text: 'Tidak mengapa', callback_data: 'borak2'},
+                    { text: 'Tidak mengapa', callback_data: 'borak2'}
                     //{ text: 'Saya nak luahkan sesuatu', callback_data: 'borak2'}
                 ]
             ]
@@ -862,6 +862,17 @@ bot.action('3', ctx => {
 
 bot.action('video', ctx => {
     bot.telegram.sendMessage(ctx.chat.id, `https://youtu.be/chE00kGtg48`);
+    bot.telegram.sendMessage(ctx.chat.id, `Nak teruskan berborak dengan saya?`,
+    {
+        reply_markup: {
+            inline_keyboard: [
+                [
+                    { text: 'Nak', callback_data: 'borak2'},
+                    { text: 'Tidak mengapa', callback_data: 'help'}
+                ]
+            ]
+        }
+    })
 })
 
 bot.action('4', ctx => {
@@ -871,13 +882,23 @@ bot.action('4', ctx => {
             inline_keyboard: [
                 [
                     { text: 'Nak', callback_data: 'video'},
-                    { text: 'Tidak mengapa', callback_data: 'borak2'},
+                    { text: 'Tidak mengapa', callback_data: 'borak2'}
                     //{ text: 'Saya nak luahkan sesuatu', callback_data: 'borak2'}
                 ]
             ]
         }
     })
 })
+
+/*bot.command('luahan', ctx => {
+    let input = ctx.message.text.split(" ");
+    if (input.length != 3){
+        ctx.reply("Luah dengan buat /luahan dan type 3 ayat tentang apa yang anda rasa");
+        return;
+    }
+    let luahan = input[1];
+    let luahan = input[1];
+})*/
 //borak//
 
 bot.launch();
