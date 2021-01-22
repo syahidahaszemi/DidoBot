@@ -786,7 +786,7 @@ bot.action('tau', ctx => {
             inline_keyboard: [
                 [
                     { text: '☺️', callback_data: 'borak2'},
-                    { text: '😞', callback_data: 'startmood'}
+                    //{ text: '😞', callback_data: 'startmood'}
                 ]
             ]
         }
@@ -868,7 +868,7 @@ bot.action('video', ctx => {
             inline_keyboard: [
                 [
                     { text: 'Nak', callback_data: 'borak2'},
-                    { text: 'Tidak mengapa', callback_data: 'help'}
+                    { text: 'Tidak mengapa', callback_data: 'borak2'}
                 ]
             ]
         }
