@@ -714,7 +714,7 @@ bot.command('bye', ctx => {
 
 //borak//
 bot.command('borak', ctx => {
-    bot.telegram.sendMessage(ctx.chat.id, 'Pilih salah satu dari pilihan di bawah ini',
+    bot.telegram.sendMessage(ctx.chat.id, 'Pilih satu dari pilihan di bawah ini',
     {
         reply_markup: {
             inline_keyboard: [
