@@ -663,7 +663,7 @@ bot.action('nak', ctx => {
         reply_markup: {
             inline_keyboard: [
                 [
-                    { text: 'Nak (taip /fortune)', callback_data: 'fortune'},
+                    { text: 'Nak (/fortune)', callback_data: 'fortune'},
                     { text: 'Tidak mengapa', callback_data: 'bye'}
                 ]
             ]
@@ -719,12 +719,12 @@ bot.command('borak', ctx => {
         reply_markup: {
             inline_keyboard: [
                 [
-                    { text: 'Fakta derpesi', callback_data: '1'},
-                    { text: 'Apa itu depresi', callback_data: '2'}
+                    { text: '1', callback_data: '1'},
+                    { text: '2', callback_data: '2'}
                 ],
                 [
-                    { text: 'Video', callback_data: '3'},
-                    { text: 'Lain lain', callback_data: '4'}
+                    { text: '3', callback_data: '3'},
+                    { text: '4', callback_data: '4'}
                 ]
             ] 
         }
