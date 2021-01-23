@@ -412,7 +412,7 @@ bot.action('S_6', ctx => {
     bot.telegram.sendMessage(ctx.chat.id, `Sila jawab soalan dengan /S6 *jawapan* Contoh: /S6 ya
 
     Soalan 6:
-    Adakah anda rasa Dido dapat membantu anda? (ya/tidak)`);
+    Adakah anda rasa Dido dapat membantu anda? (ya/tidak/mungkin)`);
 })
 
 bot.command('S6', ctx => {
