@@ -663,7 +663,7 @@ bot.action('nak', ctx => {
         reply_markup: {
             inline_keyboard: [
                 [
-                    { text: 'Nak (sila taip /fortune untuk teruskan)', callback_data: 'fortune'},
+                    { text: 'Nak (taip /fortune)', callback_data: 'fortune'},
                     { text: 'Tidak mengapa', callback_data: 'bye'}
                 ]
             ]
