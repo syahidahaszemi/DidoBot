@@ -25,7 +25,7 @@ const mysql = require('mysql');
     database: "heroku_5be77b62e4f10d6" 
 })*/
 
-dbcon();
+/*dbcon();
 function dbcon(){
     console.log("Connected !");
 
@@ -46,7 +46,7 @@ function dbcon(){
             })
         })
     })
-}
+}*/
 //database//
 
 //helpinfo//
