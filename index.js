@@ -412,7 +412,7 @@ bot.action('S_6', ctx => {
     bot.telegram.sendMessage(ctx.chat.id, `Sila jawab soalan dengan /S6 *jawapan* Contoh: /S6 ya
 
     Soalan 6:
-    Adakah anda rasa Dido dapat membantu anda? (ya/tidak/mungkin)`);
+    Adakah anda rasa Dido dapat membantu anda? (ya/tidak)`);
 })
 
 bot.command('S6', ctx => {
@@ -663,7 +663,7 @@ bot.action('nak', ctx => {
         reply_markup: {
             inline_keyboard: [
                 [
-                    { text: 'Nak (/fortune)', callback_data: 'fortune'},
+                    { text: 'Nak (taip /fortune)', callback_data: 'fortune'},
                     { text: 'Tidak mengapa', callback_data: 'bye'}
                 ]
             ]
