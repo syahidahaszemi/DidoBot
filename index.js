@@ -705,7 +705,7 @@ bot.command('feedback', ctx => {
 
 //bye//
 bot.command('bye', ctx => {
-    ctx.reply(`Okaylah ${ctx.chat.first_name}, saya gembira dapat jumpa dengan awak hari ini! Awak telah melakukan tugasan yang sangat baik!
+    ctx.reply(`Okaylah ${ctx.chat.first_name}, saya gembira dapat berjumpa dengan awak hari ini! Awak telah melakukan tugasan yang sangat baik!
     Saya teruja untuk terus bekerjasama dengan awak 😊
     Jumpa esok, bye!`
     );
