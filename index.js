@@ -225,7 +225,7 @@ bot.action('moodsurvey', ctx => {
                     { text: 'Tidak mengapa lah', callback_data: 'tidak'}
                 ],
                 [
-                    { text: `Saya nak borak dengan Dido (/borak - untuk memulakan)`, callback_data: 'borak'}
+                    { text: `Saya nak borak dengan Dido (taip /borak)`, callback_data: 'borak'}
                 ]
             ] 
         }
@@ -278,7 +278,7 @@ bot.action('S_2', ctx => {
 bot.command('S2', ctx => {
     let input = ctx.message.text.split(" ");
     if(input.length != 2){
-        ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+        ctx.reply("Amaran! Anda harus memberi nama mood pada argument ke 2");
         return;
     }
     let moodsurveyS2= input[1];
