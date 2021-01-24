@@ -15,7 +15,7 @@ const axios = require('axios');
 
 //const apikey = "129ceb9231d6a4b260ac296fe0ddde411e7f9db24c10a9a80cab5b5a5d9a1850";
 //database//
-/*const mysql = require('mysql');
+const mysql = require('mysql');
 
 //mysql://b1d5a4ba692efd:68747ae9@us-cdbr-east-02.cleardb.com/heroku_5be77b62e4f10d6?reconnect=true
 const conn = mysql.createConnection({
@@ -46,7 +46,7 @@ function dbcon(){
             })
         })
     })
-}*/
+}
 //database//
 
 //helpinfo//
