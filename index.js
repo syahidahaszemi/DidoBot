@@ -606,7 +606,7 @@ bot.command('S10', ctx => {
 
 bot.action('S_11', ctx => {
     ctx.deleteMessage();
-    bot.telegram.sendMessage(ctx.chat.id, `Sila jawab soalan dengan /S11 *jawapan* Contoh: /S11 22
+    bot.telegram.sendMessage(ctx.chat.id, `Sila jawab soalan dengan /S11 *jawapan* Contoh: /S11 23
     Soalan 11:
     Berapakah umur anda?`);
 })
