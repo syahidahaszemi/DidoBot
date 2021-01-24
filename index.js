@@ -719,7 +719,7 @@ bot.command('borak', ctx => {
         reply_markup: {
             inline_keyboard: [
                 [
-                    { text: 'Fakta depresi', callback_data: '1'},
+                    { text: '1', callback_data: '1'},
                     { text: '2', callback_data: '2'}
                 ],
                 [
