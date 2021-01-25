@@ -1,18 +1,19 @@
 
-const Telegraf = require('telegraf');
+// const Telegraf = require('telegraf');
 
 
 const { Composer } = require('micro-bot');
-//const bot = new Composer
+const bot = new Composer
 
 /*bot.start((ctx) => {
     ctx.reply('Hello apa khabar! Saya Dido')
 })*/
 
+//https://shrouded-plateau-24684.herokuapp.com/
 // shrouded-springs-65878 id heroku
 // https://shrouded-springs-65878.herokuapp.com/ and https://git.heroku.com/shrouded-springs-65878.git server heroku
 
-const bot = new Telegraf('1410566262:AAFHgqkaSFVYeQU5liSJ1_VGWACn2pWuh3Q');
+// const bot = new Telegraf('1410566262:AAFHgqkaSFVYeQU5liSJ1_VGWACn2pWuh3Q');
             
 const axios = require('axios');
 
@@ -963,8 +964,8 @@ bot.action('4', ctx => {
 
 //borak//
 
-bot.launch();
-//module.exports = bot
+//bot.launch();
+module.exports = bot
 
 /*function sendStartMessage(ctx){
     let startMessage = 'Selamat datang, bot ini memberikan informasi mengenai mata wang crypto';
