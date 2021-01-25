@@ -147,7 +147,7 @@ bot.action('help', ctx => {
 //helpinfo//
 
 bot.command('helpSOS', ctx => {
-    bot.telegram.sendMessage(ctx.chat.id, `Hai awak. Jikalau awak betul betul perlukan bantuan, awak boleh telefon 019-2615999 atau klik sahaja url ini untuk terus ke whatsapp Talian Kasih http://wa.me/60192615999`);
+    bot.telegram.sendMessage(ctx.chat.id, `Hai awak. Jikalau awak betul betul perlukan bantuan, awak boleh telefon 012-2586599 atau klik sahaja url ini untuk terus ke whatsapp Talian Kasih http://wa.me/60122586599`);
     bot.telegram.sendAnimation(ctx.chat.id, 'https://media1.tenor.com/images/a90ee0f3d1ca364529a1fd3d82213686/tenor.gif?itemid=4959049');
 })
 
@@ -229,33 +229,17 @@ bot.action('boleh', ctx => {
 
 //mood//
 bot.command('startmood', ctx => { 
-    bot.telegram.sendMessage(ctx.chat.id,  "Sila taip /mood *mood awak* daripada pilihan yang di bawah ini. Contoh: /mood Kemurungan",
-    {
-        reply_markup: {
-            inline_keyboard: [
-                [
-                    {text: 'Kemurungan (Depression)', callback_data: 'kemurungan'},
-                    {text: 'Kegelisahan (Anxiety)', callback_data: 'kegelisahan'}
-                ],
-                [
-                    {text: 'Kesedihan (Sadness)', callback_data: 'kesedihan'},
-                    {text: 'Kekosongan (Emptiness)', callback_data: 'kekosongan'}
-                ],
-                [
-                    {text: 'Tidur (Sleep Problems)', callback_data: 'tidur'},
-                    {text: 'Hubungan (Relationships Problem)', callback_data: 'hubungan'}
-                ],
-                [
-                    {text: 'Kemarahan (Anger)', callback_data: 'kemarahan'},
-                    {text: 'Kesunyian (Loneliness)', callback_data: 'kesunyian'}
-                ],
-                [
-                    {text: 'Tekanan (Stress)', callback_data: 'tekanan'}
-                ]
-            ]
-            
-        }
-    })
+    bot.telegram.sendMessage(ctx.chat.id,  `Sila taip /mood *mood awak* daripada pilihan yang di bawah ini. Contoh: /mood Kemurungan
+    🌙 Kemurungan (Depression)
+    🌙 Kegelisahan (Anxiety)
+    🌙 Kesedihan (Sadness)
+    🌙 Kekosongan (Emptiness)
+    🌙 Tidur (Sleep Problems)
+    🌙 Hubungan (Relationships Problem)
+    🌙 Kemarahan (Anger)
+    🌙 Kesunyian (Loneliness)
+    🌙 Tekanan (Stress)
+    `);
 })
 
 bot.command('mood', ctx => {
@@ -855,7 +839,7 @@ bot.action('borak2', ctx => {
                     { text: 'Tips', callback_data: '4'}
                 ],
                 [
-                    { text: 'Bantuan', callback_data: 'help'}
+                    { text: 'Kembali ke Bantuan', callback_data: 'help'}
                 ]
             ] 
         }
@@ -925,10 +909,12 @@ Awak ada alami situasi begini?`,
 })
 
 bot.action('pernah', ctx => {
-    bot.telegram.sendMessage(ctx.chat.id, `Sedihnya apabila awak pernah mengalaminya. Jikalau awak nak perlukan bantuan boleh /helpSOS okay? 
+    bot.telegram.sendMessage(ctx.chat.id, `
+Sedihnya apabila awak pernah mengalaminya. 
+Jikalau awak nak perlukan bantuan boleh /helpSOS okay? 
 
-    Saya memahami bahawa perasaan pendam itu sangat menyakitkan. Saya harap awak dapat meluahkan perasaan kepada sesiapa yang awak rasa boleh dipercayai.
-    Jika tidak, awak boleh borak dengan saya :)`, 
+Saya memahami bahawa perasaan pendam itu sangat menyakitkan. Saya harap awak dapat meluahkan perasaan kepada sesiapa yang awak rasa boleh dipercayai.
+Jika tidak, awak boleh borak dengan saya :)`, 
     {
         reply_markup: {
             inline_keyboard: [
@@ -1018,7 +1004,7 @@ bot.action('tips', ctx => {
                     { text: '☘️', callback_data: 'perkara'},
                 ],
                 [
-                    { text: 'Bantuan', callback_data: 'help'},
+                    { text: 'Kembali ke Bantuan', callback_data: 'help'},
                 ]
             ]
         }
