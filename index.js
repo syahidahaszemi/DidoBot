@@ -766,7 +766,7 @@ bot.action('nak', ctx => {
 })
 
 bot.command('fortune', ctx => {
-   axios.get('https://timshim-quotes-v1.p.rapidapi.com/quotes')
+   axios.get('http://yerkee.com/api/fortune')
    .then(res => {
        ctx.reply(res.data.fortune);
    }).catch(e => {
