@@ -111,6 +111,7 @@ function dbcon(){
 const helpMessage = `
     Untuk memulakan perbualan:
     /start
+
     @DiidooBot
 
     Untuk bantuan kecemasan:
@@ -155,7 +156,6 @@ bot.command('helpSOS', ctx => {
 bot.command('start', (ctx) => {
     //bot.telegram.sendMessage(ctx.chat.id, "Halo! Apa khabar awak! Saya Dido!");
     bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT FROM NEW USER
-    First Name: ${ctx.chat.first_name}
     ID: ${ctx.chat.id}`);
     ctx.reply(helpMessage);
     bot.telegram.sendMessage(ctx.chat.id, "Adakah awak pertama kali berbual dengan saya?",
@@ -266,7 +266,6 @@ bot.command('mood', ctx => {
     }
     let gettoknowMood = input[1];
     bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A DAILY MOOD USER
-    Name: ${ctx.chat.first_name}
     ID: ${ctx.chat.id}
     Mood: ${gettoknowMood}`);
     var sql = `INSERT INTO gettoknow (mood, telegram_id, first_name, username, type) VALUES ('${gettoknowMood}', '${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${ctx.chat.type}')`;
@@ -326,7 +325,6 @@ bot.command('S1', ctx => {
     }
     let moodsurveyS1= input[1];
     bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S1
-    Name: ${ctx.chat.first_name}
     ID: ${ctx.chat.id}
     Mood: ${moodsurveyS1}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s1) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS1}')`;
@@ -365,7 +363,6 @@ bot.command('S2', ctx => {
     }
     let moodsurveyS2= input[1];
     bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S2
-    Name: ${ctx.chat.first_name}
     ID: ${ctx.chat.id}
     Mood: ${moodsurveyS2}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s2) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS2}')`;
@@ -404,7 +401,6 @@ bot.command('S3', ctx => {
     }
     let moodsurveyS3= input[1];
     bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S3
-    Name: ${ctx.chat.first_name}
     ID: ${ctx.chat.id}
     Mood: ${moodsurveyS3}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s3) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS3}')`;
@@ -443,7 +439,6 @@ bot.command('S4', ctx => {
     }
     let moodsurveyS4= input[1];
     bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S4
-    Name: ${ctx.chat.first_name}
     ID: ${ctx.chat.id}
     Mood: ${moodsurveyS4}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s4) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS4}')`;
@@ -482,7 +477,6 @@ bot.command('S5', ctx => {
     }
     let moodsurveyS5= input[1];
     bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S5
-    Name: ${ctx.chat.first_name}
     ID: ${ctx.chat.id}
     Mood: ${moodsurveyS5}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s5) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS5}')`;
@@ -521,7 +515,6 @@ bot.command('S6', ctx => {
     }
     let moodsurveyS6= input[1];
     bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S6
-    Name: ${ctx.chat.first_name}
     ID: ${ctx.chat.id}
     Mood: ${moodsurveyS6}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s6) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS6}')`;
@@ -569,7 +562,6 @@ bot.command('S7', ctx => {
     }
     let moodsurveyS7= input[1];
     bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S7
-    Name: ${ctx.chat.first_name}
     ID: ${ctx.chat.id}
     Mood: ${moodsurveyS7}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s7) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS7}')`;
@@ -614,7 +606,6 @@ bot.command('S8', ctx => {
     }
     let moodsurveyS8= input[1];
     bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S8
-    Name: ${ctx.chat.first_name}
     ID: ${ctx.chat.id}
     Mood: ${moodsurveyS8}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s8) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS8}')`;
@@ -659,7 +650,6 @@ bot.command('S9', ctx => {
     }
     let moodsurveyS9= input[1];
     bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S9
-    Name: ${ctx.chat.first_name}
     ID: ${ctx.chat.id}
     Mood: ${moodsurveyS9}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s9) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS9}')`;
@@ -699,7 +689,6 @@ bot.command('S10', ctx => {
     }
     let moodsurveyS10= input[1];
     bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S10
-    Name: ${ctx.chat.first_name}
     ID: ${ctx.chat.id}
     Mood: ${moodsurveyS10}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s10) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS10}')`;
@@ -737,7 +726,6 @@ bot.command('S11', ctx => {
     }
     let moodsurveyAge= input[1];
     bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S11
-    Name: ${ctx.chat.first_name}
     ID: ${ctx.chat.id}
     Mood: ${moodsurveyAge}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, Age) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyAge}')`;
@@ -867,7 +855,7 @@ bot.action('borak2', ctx => {
                     { text: '4', callback_data: '4'}
                 ],
                 [
-                    { text: 'Kembali ke ', callback_data: ctx.reply(helpMessage)}
+                    { text: 'Kembali ke "HELP MESSAGE"', callback_data: ctx.reply(helpMessage)}
                 ]
             ] 
         }
@@ -1001,12 +989,12 @@ bot.action('video', ctx => {
 })
 
 bot.action('4', ctx => {
-    bot.telegram.sendMessage(ctx.chat.id, 'Hai awak, nak luahkan sesuatu?',
+    bot.telegram.sendMessage(ctx.chat.id, 'Hai awak nak tahu 5 cara untuk menbantu diri awak dari kemurungan ?',
     {
         reply_markup: {
             inline_keyboard: [
                 [
-                    { text: 'Nak', callback_data: 'video'},
+                    { text: 'Nak!', callback_data: 'tips'},
                     { text: 'Tidak mengapa', callback_data: 'borak2'}
                     //{ text: 'Saya nak luahkan sesuatu', callback_data: 'borak2'}
                 ]
@@ -1015,6 +1003,114 @@ bot.action('4', ctx => {
     })
 })
 
+bot.action('tips', ctx => {
+    bot.telegram.sendMessage(ctx.chat.id, `Ada 5 cara! Tekan di bawah untuk tahu lebih lanjut :)`,
+    {
+        reply_markup: {
+            inline_keyboard: [
+                [
+                    { text: 'Senaman', callback_data: 'senaman'},
+                    { text: 'Memelihara diri dengan pemakanan yang baik', callback_data: 'makan'}
+                ],
+                [
+                    { text: 'Kenal pasti masalah, tetapi jangan memikirkannya', callback_data: 'masalah'},
+                    { text: 'Ekspresikan diri', callback_data: 'ekspresi'}
+                ],
+                [
+                    { text: 'Cuba perhatikan perkara yang baik', callback_data: 'perkara'},
+                ],
+                [
+                    { text: '"HELP MESSAGE"', callback_data: 'help'},
+                ]
+            ]
+        }
+    })
+})
+
+bot.action('senaman', ctx => {
+    bot.telegram.sendMessage(ctx.chat.id, `
+    Berjalan kaki selama 15 hingga 30 minit setiap hari - atau menari, berjoging, atau basikal jika anda mahu. 
+    Orang yang mengalami kemurungan mungkin tidak merasa seperti aktif. Tetapi jadikan diri anda tetap melakukannya 
+    (minta rakan untuk bersenam jika anda perlu diberi motivasi). 
+    Sebaik sahaja anda terbiasa dengan latihan, tidak akan mengambil masa yang lama untuk melihat perbezaan mood anda. 😚`,
+    {
+        reply_markup: {
+            inline_keyboard: [
+                [
+                    { text: '😚', callback_data: 'tips'},
+                ]
+            ]
+        }
+    })
+})
+
+bot.action('makan', ctx => {
+    bot.telegram.sendMessage(ctx.chat.id, `
+    Kemurungan boleh mempengaruhi selera makan. Seseorang mungkin tidak merasa makan sama sekali, tetapi yang lain mungkin makan berlebihan. 
+    Sekiranya kemurungan mempengaruhi makanan anda, anda perlu lebih berhati-hati untuk mendapatkan makanan yang betul. 
+    Pemakanan yang betul dapat mempengaruhi mood dan tenaga seseorang. Oleh itu, makan banyak buah-buahan dan sayur-sayuran dan dapatkan makanan biasa 
+    (walaupun anda tidak merasa lapar, cubalah makan sesuatu yang ringan, seperti sepotong buah, agar anda terus berjalan). 😚 `,
+    {
+        reply_markup: {
+            inline_keyboard: [
+                [
+                    { text: '😚', callback_data: 'tips'},
+                ]
+            ]
+        }
+    })
+})
+
+bot.action('masalah', ctx => {
+    bot.telegram.sendMessage(ctx.chat.id, `
+    Cuba kenal pasti keadaan yang menyebabkan kemurungan anda. 
+    Apabila anda tahu apa yang membuat anda merasa biru dan mengapa, 
+    berbincanglah dengan rakan yang prihatin. 
+    Bercakap adalah cara untuk melepaskan perasaan dan menerima pemahaman. 😚 `,
+    {
+        reply_markup: {
+            inline_keyboard: [
+                [
+                    { text: '😚', callback_data: 'tips'},
+                ]
+            ]
+        }
+    })
+})
+
+bot.action('ekspresi', ctx => {
+    bot.telegram.sendMessage(ctx.chat.id, `
+    Dengan kemurungan, kreativiti dan keseronokan seseorang mungkin tersekat. Lakukan imaginasi anda (melukis, melukis, mencoret-coret,
+    menjahit, menulis, menari, menyusun muzik, dan lain-lain) dan anda bukan sahaja membuat jus kreatif mengalir, anda juga melonggarkan 
+    beberapa emosi positif. Luangkan masa untuk bermain dengan rakan atau haiwan kesayangan, atau buat sesuatu yang menyeronokkan untuk diri sendiri. 
+    Cari sesuatu untuk ditertawakan - mungkin filem yang lucu. Ketawa membantu meringankan mood anda. 😚 `,
+    {
+        reply_markup: {
+            inline_keyboard: [
+                [
+                    { text: '😚', callback_data: 'tips'},
+                ]
+            ]
+        }
+    })
+})
+
+bot.action('perkara', ctx => {
+    bot.telegram.sendMessage(ctx.chat.id, `
+    Depresi mempengaruhi pemikiran seseorang, menjadikan semuanya kelihatan suram, negatif, dan putus asa. 
+    Sekiranya anda mengalami kemurungan hanya melihat yang negatif, berusahalah untuk memperhatikan perkara baik dalam hidup. 
+    Cuba perhatikan satu perkara, kemudian cuba fikirkan satu perkara lagi. Pertimbangkan kekuatan, hadiah, atau berkat anda. 
+    Yang paling penting, jangan lupa bersabar dengan diri sendiri. Depresi memerlukan masa untuk sembuh. 😚 `,
+    {
+        reply_markup: {
+            inline_keyboard: [
+                [
+                    { text: '😚', callback_data: 'tips'},
+                ]
+            ]
+        }
+    })
+})
 //borak//
 
 bot.launch();
