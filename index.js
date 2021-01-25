@@ -1,9 +1,9 @@
 
-// const Telegraf = require('telegraf');
+const Telegraf = require('telegraf');
 
 
-const { Composer } = require('micro-bot');
-const bot = new Composer
+// const { Composer } = require('micro-bot');
+// const bot = new Composer
 
 /*bot.start((ctx) => {
     ctx.reply('Hello apa khabar! Saya Dido')
@@ -13,7 +13,7 @@ const bot = new Composer
 // shrouded-springs-65878 id heroku
 // https://shrouded-springs-65878.herokuapp.com/ and https://git.heroku.com/shrouded-springs-65878.git server heroku
 
-// const bot = new Telegraf('1410566262:AAFHgqkaSFVYeQU5liSJ1_VGWACn2pWuh3Q');
+const bot = new Telegraf('1410566262:AAFHgqkaSFVYeQU5liSJ1_VGWACn2pWuh3Q');
             
 const axios = require('axios');
 
@@ -24,10 +24,10 @@ const mysql = require('mysql');
 
 //mysql://b1d5a4ba692efd:68747ae9@us-cdbr-east-02.cleardb.com/heroku_5be77b62e4f10d6?reconnect=true
 const conn = mysql.createConnection({
-    host: "us-cdbr-east-03.cleardb.com", 
-    user: "b1d0b08f7737cc", 
-    password: "7b557195", 
-    database: "heroku_86725c0b5083819" 
+    host: "us-cdbr-east-02.cleardb.com", 
+    user: "b1d5a4ba692efd", 
+    password: "68747ae9", 
+    database: "heroku_5be77b62e4f10d6" 
 })
 
 dbcon();
@@ -48,6 +48,57 @@ function dbcon(){
             dataStore.push({
                 id: item.id,
                 mood: item.mood,
+                telegram_id: item.telegram_id,
+                first_name: item.first_name,
+                username: item.username,
+                type: item.type
+            })
+        })
+    })
+    conn.query("SELECT * FROM feedback", function (err, result, fields){
+        if(err){
+            throw err;
+        }
+        dataStore = [];
+        //console.log(result);
+        result.forEach(item => {
+            //console.log(item.name);
+            dataStore.push({
+                id: item.id,
+                mood: item.mood,
+                telegram_id: item.telegram_id,
+                first_name: item.first_name,
+                username: item.username,
+                feedback: item.feedback
+            })
+        })
+    })
+    conn.query("SELECT * FROM moodsurvey", function (err, result, fields){
+        if(err){
+            throw err;
+        }
+        dataStore = [];
+        //console.log(result);
+        result.forEach(item => {
+            //console.log(item.name);
+            dataStore.push({
+                id: item.id,
+                mood: item.mood,
+                telegram_id: item.telegram_id,
+                first_name: item.first_name,
+                username: item.username,
+                age: item.age,
+                s1: item.s1,
+                s2: item.s2,
+                s3: item.s3,
+                s4: item.s4,
+                s5: item.s5,
+                s6: item.s6,
+                s7: item.s7,
+                s8: item.s8,
+                s9: item.s9,
+                s10: item.s10,
+                s11: item.s11
             })
         })
     })
@@ -84,6 +135,7 @@ const helpMessage = `
     Untuk akhirkan perbualan:
     /bye
 `;
+
 bot.command('help', ctx => {
     ctx.reply(helpMessage);
 });
@@ -97,6 +149,8 @@ bot.command('helpSOS', ctx => {
     bot.telegram.sendMessage(ctx.chat.id, `Hai awak. Jikalau awak betul betul perlukan bantuan, awak boleh telefon 019-2615999 atau klik sahaja url ini untuk terus ke whatsapp Talian Kasih http://wa.me/60192615999`);
     bot.telegram.sendAnimation(ctx.chat.id, 'https://media1.tenor.com/images/a90ee0f3d1ca364529a1fd3d82213686/tenor.gif?itemid=4959049');
 })
+
+
 //welcome//
 bot.command('start', (ctx) => {
     //bot.telegram.sendMessage(ctx.chat.id, "Halo! Apa khabar awak! Saya Dido!");
@@ -964,8 +1018,8 @@ bot.action('4', ctx => {
 
 //borak//
 
-//bot.launch();
-module.exports = bot
+bot.launch();
+// module.exports = bot
 
 /*function sendStartMessage(ctx){
     let startMessage = 'Selamat datang, bot ini memberikan informasi mengenai mata wang crypto';
