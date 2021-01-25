@@ -275,7 +275,7 @@ bot.command('mood', ctx => {
             throw err;
         };
         console.log(`data ${gettoknowMood} berhasil ditambahkan ke database`)
-        bot.telegram.sendMessage(`Oh, ${gettoknowMood}..`);
+        ctx.reply(`Oh, ${gettoknowMood}..`);
         ctx.reply(`Mesti agak sukar untuk awak, ${ctx.chat.username}. Tapi awak datang pada tempat yang betul.`,
         {
             reply_markup: {
