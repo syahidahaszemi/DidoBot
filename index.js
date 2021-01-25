@@ -2,9 +2,9 @@ const Telegraf = require('telegraf');
 //const { Composer } = require('micro-bot')
 //const bot = new Composer
 
-/*bot.start((ctx) => {
-    ctx.reply('Hello apa khabar')
-})*/
+bot.start((ctx) => {
+    ctx.reply('Hello apa khabar! Saya Dido')
+})
 
 // shrouded-springs-65878 id heroku
 // https://shrouded-springs-65878.herokuapp.com/ and https://git.heroku.com/shrouded-springs-65878.git server heroku
@@ -82,7 +82,7 @@ bot.command('helpSOS', ctx => {
 })
 //welcome//
 bot.command('start', (ctx) => {
-    bot.telegram.sendMessage(ctx.chat.id, "Halo! Apa khabar awak! Saya Dido!");
+    //bot.telegram.sendMessage(ctx.chat.id, "Halo! Apa khabar awak! Saya Dido!");
     ctx.reply(helpMessage);
     bot.telegram.sendMessage(ctx.chat.id, "Adakah awak pertama kali berbual dengan saya?",
     {
@@ -743,6 +743,9 @@ bot.action('borak2', ctx => {
                 [
                     { text: '3', callback_data: '3'},
                     { text: '4', callback_data: '4'}
+                ],
+                [
+                    { text: 'Kembali ke ', callback_data: ctx.reply(helpMessage)}
                 ]
             ] 
         }
