@@ -117,7 +117,7 @@ const helpMessage = `
     Untuk bantuan kecemasan:
     /helpSOS
 
-    Bantuan 
+    Kembali ke Bantuan 
     /help
 
     Untuk mood harian 
