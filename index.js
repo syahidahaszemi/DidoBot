@@ -910,8 +910,7 @@ Awak ada alami situasi begini?`,
 
 bot.action('pernah', ctx => {
     bot.telegram.sendMessage(ctx.chat.id, `
-Sedihnya apabila awak pernah mengalaminya. 
-Jikalau awak nak perlukan bantuan boleh /helpSOS okay? 
+Sedihnya apabila awak pernah mengalaminya. Jikalau awak nak perlukan bantuan boleh /helpSOS okay? 
 
 Saya memahami bahawa perasaan pendam itu sangat menyakitkan. Saya harap awak dapat meluahkan perasaan kepada sesiapa yang awak rasa boleh dipercayai.
 Jika tidak, awak boleh borak dengan saya :)`, 
