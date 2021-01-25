@@ -55,8 +55,14 @@ const helpMessage = `
     /start
     @DiidooBot
 
-    Untuk bantuan:
+    Untuk bantuan kecemasan:
     /helpSOS
+
+    "Help Message" 
+    /help
+
+    Untuk mood harian 
+    /startmood
 
     Untuk borak:
     /borak
@@ -71,6 +77,10 @@ const helpMessage = `
     Untuk akhirkan perbualan:
     /bye
 `;
+bot.command('help', ctx => {
+    ctx.reply(helpMessage);
+});
+
 bot.action('help', ctx => {
     ctx.reply(helpMessage);
 });
@@ -83,6 +93,9 @@ bot.command('helpSOS', ctx => {
 //welcome//
 bot.command('start', (ctx) => {
     //bot.telegram.sendMessage(ctx.chat.id, "Halo! Apa khabar awak! Saya Dido!");
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT FROM NEW USER
+    First Name: ${ctx.chat.first_name}
+    ID: ${ctx.chat.id}`);
     ctx.reply(helpMessage);
     bot.telegram.sendMessage(ctx.chat.id, "Adakah awak pertama kali berbual dengan saya?",
     {
@@ -154,8 +167,8 @@ bot.action('boleh', ctx => {
 //callbackdata boleh//
 
 //mood//
-bot.command('startmood', ctx => {
-    bot.telegram.sendMessage(ctx.chat.id, "Sila taip /mood *mood awak* daripada pilihan yang di bawah ini. Contoh: /mood Kemurungan",
+bot.command('startmood', ctx => { 
+    bot.telegram.sendMessage(ctx.chat.id,  "Sila taip /mood *mood awak* daripada pilihan yang di bawah ini. Contoh: /mood Kemurungan",
     {
         reply_markup: {
             inline_keyboard: [
@@ -184,7 +197,7 @@ bot.command('startmood', ctx => {
     })
 })
 
-bot.command('mood', ctx => {
+bot.action('mood', ctx => {
     let input = ctx.message.text.split(" ");
     if(input.length != 2){
         ctx.reply("Anda harus memberi nama mood pada argument ke 2");
