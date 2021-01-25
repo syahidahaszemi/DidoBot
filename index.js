@@ -259,7 +259,6 @@ bot.command('startmood', ctx => {
 })
 
 bot.command('mood', ctx => {
-    
     let input = ctx.message.text.split(" ");
     if(input.length != 2){
         ctx.reply("Anda harus memberi nama mood pada argument ke 2");
@@ -276,7 +275,7 @@ bot.command('mood', ctx => {
             throw err;
         };
         console.log(`data ${gettoknowMood} berhasil ditambahkan ke database`)
-        ctx.reply(`Oh, ${gettoknowMood}..`);
+        bot.telegram.sendMessage(`Oh, ${gettoknowMood}..`);
         ctx.reply(`Mesti agak sukar untuk awak, ${ctx.chat.username}. Tapi awak datang pada tempat yang betul.`,
         {
             reply_markup: {
