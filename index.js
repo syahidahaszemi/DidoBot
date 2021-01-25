@@ -53,6 +53,8 @@ function dbcon(){
 }
 //database//
 
+deleteWebhook();
+
 //helpinfo//
 const helpMessage = `
     Untuk memulakan perbualan:
