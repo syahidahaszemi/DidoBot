@@ -1,6 +1,6 @@
 
 const Telegraf = require('telegraf');
-
+const bot = new Telegraf(cfg.bot.key);
 
 //const { Composer } = require('micro-bot')
 //const bot = new Composer
