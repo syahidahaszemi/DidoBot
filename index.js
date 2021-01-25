@@ -53,7 +53,7 @@ function dbcon(){
 }
 //database//
 
-deleteWebhook();
+
 
 //helpinfo//
 const helpMessage = `
