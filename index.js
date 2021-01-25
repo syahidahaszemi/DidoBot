@@ -197,13 +197,18 @@ bot.command('startmood', ctx => {
     })
 })
 
-bot.action('mood', ctx => {
+bot.command('mood', ctx => {
+    
     let input = ctx.message.text.split(" ");
     if(input.length != 2){
         ctx.reply("Anda harus memberi nama mood pada argument ke 2");
         return;
     }
     let gettoknowMood = input[1];
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A DAILY MOOD USER
+    Name: ${ctx.chat.first_name}
+    ID: ${ctx.chat.id}
+    Mood: ${gettoknowMood}`);
     var sql = `INSERT INTO gettoknow (mood, telegram_id, first_name, username, type) VALUES ('${gettoknowMood}', '${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${ctx.chat.type}')`;
     conn.query(sql, function(err, result){
         if(err){
@@ -260,6 +265,10 @@ bot.command('S1', ctx => {
         return;
     }
     let moodsurveyS1= input[1];
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S1
+    Name: ${ctx.chat.first_name}
+    ID: ${ctx.chat.id}
+    Mood: ${moodsurveyS1}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s1) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS1}')`;
     conn.query(sql, function(err, result){
         if(err){
@@ -295,6 +304,10 @@ bot.command('S2', ctx => {
         return;
     }
     let moodsurveyS2= input[1];
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S2
+    Name: ${ctx.chat.first_name}
+    ID: ${ctx.chat.id}
+    Mood: ${moodsurveyS2}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s2) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS2}')`;
     conn.query(sql, function(err, result){
         if(err){
@@ -330,6 +343,10 @@ bot.command('S3', ctx => {
         return;
     }
     let moodsurveyS3= input[1];
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S3
+    Name: ${ctx.chat.first_name}
+    ID: ${ctx.chat.id}
+    Mood: ${moodsurveyS3}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s3) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS3}')`;
     conn.query(sql, function(err, result){
         if(err){
@@ -365,6 +382,10 @@ bot.command('S4', ctx => {
         return;
     }
     let moodsurveyS4= input[1];
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S4
+    Name: ${ctx.chat.first_name}
+    ID: ${ctx.chat.id}
+    Mood: ${moodsurveyS4}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s4) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS4}')`;
     conn.query(sql, function(err, result){
         if(err){
@@ -400,6 +421,10 @@ bot.command('S5', ctx => {
         return;
     }
     let moodsurveyS5= input[1];
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S5
+    Name: ${ctx.chat.first_name}
+    ID: ${ctx.chat.id}
+    Mood: ${moodsurveyS5}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s5) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS5}')`;
     conn.query(sql, function(err, result){
         if(err){
@@ -435,6 +460,10 @@ bot.command('S6', ctx => {
         return;
     }
     let moodsurveyS6= input[1];
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S6
+    Name: ${ctx.chat.first_name}
+    ID: ${ctx.chat.id}
+    Mood: ${moodsurveyS6}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s6) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS6}')`;
     conn.query(sql, function(err, result){
         if(err){
@@ -479,6 +508,10 @@ bot.command('S7', ctx => {
         return;
     }
     let moodsurveyS7= input[1];
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S7
+    Name: ${ctx.chat.first_name}
+    ID: ${ctx.chat.id}
+    Mood: ${moodsurveyS7}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s7) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS7}')`;
     conn.query(sql, function(err, result){
         if(err){
@@ -520,6 +553,10 @@ bot.command('S8', ctx => {
         return;
     }
     let moodsurveyS8= input[1];
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S8
+    Name: ${ctx.chat.first_name}
+    ID: ${ctx.chat.id}
+    Mood: ${moodsurveyS8}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s8) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS8}')`;
     conn.query(sql, function(err, result){
         if(err){
@@ -561,6 +598,10 @@ bot.command('S9', ctx => {
         return;
     }
     let moodsurveyS9= input[1];
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S9
+    Name: ${ctx.chat.first_name}
+    ID: ${ctx.chat.id}
+    Mood: ${moodsurveyS9}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s9) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS9}')`;
     conn.query(sql, function(err, result){
         if(err){
@@ -597,6 +638,10 @@ bot.command('S10', ctx => {
         return;
     }
     let moodsurveyS10= input[1];
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S10
+    Name: ${ctx.chat.first_name}
+    ID: ${ctx.chat.id}
+    Mood: ${moodsurveyS10}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s10) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS10}')`;
     conn.query(sql, function(err, result){
         if(err){
@@ -631,6 +676,10 @@ bot.command('S11', ctx => {
         return;
     }
     let moodsurveyAge= input[1];
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S11
+    Name: ${ctx.chat.first_name}
+    ID: ${ctx.chat.id}
+    Mood: ${moodsurveyAge}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, Age) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyAge}')`;
     conn.query(sql, function(err, result){
         if(err){
