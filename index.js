@@ -772,7 +772,7 @@ bot.command('fortune', ctx => {
    }).catch(e => {
        console.log(e);
    })
-   bot.telegram.sendMessage(ctx.chat.id, 'Apa pendapat awak mengenai perbualan hari ini? (Baik/TidakBaik) Contoh: /feedback Baik');       
+   bot.telegram.sendMessage(ctx.chat.id, 'Apa pendapat awak mengenai perbualan hari ini? (Baik/TidakBaik) [Contoh: /feedback Baik]');       
 })
 
 //random quotes//
