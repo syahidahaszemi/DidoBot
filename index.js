@@ -1,4 +1,5 @@
 const Telegraf = require('telegraf');
+
 //const { Composer } = require('micro-bot')
 //const bot = new Composer
 
@@ -9,7 +10,9 @@ const Telegraf = require('telegraf');
 // shrouded-springs-65878 id heroku
 // https://shrouded-springs-65878.herokuapp.com/ and https://git.heroku.com/shrouded-springs-65878.git server heroku
 
-const bot = new Telegraf('1410566262:AAFHgqkaSFVYeQU5liSJ1_VGWACn2pWuh3Q');
+const bot = new Telegraf('1410566262:AAFHgqkaSFVYeQU5liSJ1_VGWACn2pWuh3Q', {
+    telegram: { webhookReply: true},
+});
 
 const axios = require('axios');
 
