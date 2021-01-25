@@ -24,10 +24,10 @@ const mysql = require('mysql');
 
 //mysql://b1d5a4ba692efd:68747ae9@us-cdbr-east-02.cleardb.com/heroku_5be77b62e4f10d6?reconnect=true
 const conn = mysql.createConnection({
-    host: "us-cdbr-east-02.cleardb.com", 
-    user: "b1d5a4ba692efd", 
-    password: "68747ae9", 
-    database: "heroku_5be77b62e4f10d6" 
+    host: "us-cdbr-east-03.cleardb.com", 
+    user: "b1d0b08f7737cc", 
+    password: "7b557195", 
+    database: "heroku_86725c0b5083819" 
 })
 
 dbcon();
