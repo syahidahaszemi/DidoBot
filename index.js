@@ -123,7 +123,7 @@ const helpMessage = `
     Untuk mood harian 
     /startmood
 
-    Untuk borak:
+    Untuk borak dan tips:
     /borak
 
     Untuk kata kata rawak:
