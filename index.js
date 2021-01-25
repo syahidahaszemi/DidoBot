@@ -117,7 +117,7 @@ const helpMessage = `
     Untuk bantuan kecemasan:
     /helpSOS
 
-    "Help Message" 
+    Bantuan 
     /help
 
     Untuk mood harian 
@@ -829,12 +829,12 @@ bot.command('borak', ctx => {
         reply_markup: {
             inline_keyboard: [
                 [
-                    { text: '1', callback_data: '1'},
-                    { text: '2', callback_data: '2'}
+                    { text: 'Fakta Depresi', callback_data: '1'},
+                    { text: 'Apa itu Depresi?', callback_data: '2'}
                 ],
                 [
-                    { text: '3', callback_data: '3'},
-                    { text: '4', callback_data: '4'}
+                    { text: 'Video', callback_data: '3'},
+                    { text: 'Tips', callback_data: '4'}
                 ]
             ] 
         }
@@ -847,15 +847,15 @@ bot.action('borak2', ctx => {
         reply_markup: {
             inline_keyboard: [
                 [
-                    { text: '1', callback_data: '1'},
-                    { text: '2', callback_data: '2'}
+                    { text: 'Fakta Depresi', callback_data: '1'},
+                    { text: 'Apa itu Depresi?', callback_data: '2'}
                 ],
                 [
-                    { text: '3', callback_data: '3'},
-                    { text: '4', callback_data: '4'}
+                    { text: 'Video', callback_data: '3'},
+                    { text: 'Tips', callback_data: '4'}
                 ],
                 [
-                    { text: 'Kembali ke "HELP MESSAGE"', callback_data: ctx.reply(helpMessage)}
+                    { text: 'Bantuan', callback_data: 'help'}
                 ]
             ] 
         }
@@ -907,10 +907,8 @@ bot.action('tau', ctx => {
 })
 
 bot.action('2', ctx => {
-    bot.telegram.sendMessage(ctx.chat.id, `Sebagai kawan bot kepada awak, saya rasa saya perlu bagitahu tentang apa itu Depresi.
-Depresi ditakrifkan sebagai kehadiran mood yang tertekan dan / atau hilangnya minat / keseronokan,
-digabungkan dengan lima atau lebih gejala berikut: perubahan selera makan atau berat badan, masalah tidur,
-pergolakan atau keterbelakangan psikomotor, keletihan, perasaan tidak berharga, kehilangan tumpuan, atau pemikiran bunuh diri yang berulang.
+    bot.telegram.sendMessage(ctx.chat.id, `Sebagai kawan bot kepada awak, saya rasa saya perlu bagitahu tentang apa itu Depresi. Depresi ditakrifkan sebagai kehadiran mood yang tertekan dan / atau hilangnya minat / keseronokan,
+digabungkan dengan lima atau lebih gejala berikut: perubahan selera makan atau berat badan, masalah tidur, pergolakan atau keterbelakangan psikomotor, keletihan, perasaan tidak berharga, kehilangan tumpuan, atau pemikiran bunuh diri yang berulang.
 
 Awak ada alami situasi begini?`, 
     {
@@ -1009,18 +1007,18 @@ bot.action('tips', ctx => {
         reply_markup: {
             inline_keyboard: [
                 [
-                    { text: 'Senaman', callback_data: 'senaman'},
-                    { text: 'Memelihara diri dengan pemakanan yang baik', callback_data: 'makan'}
+                    { text: '🏃🏻‍♀️', callback_data: 'senaman'},
+                    { text: '🍏', callback_data: 'makan'}
                 ],
                 [
-                    { text: 'Kenal pasti masalah, tetapi jangan memikirkannya', callback_data: 'masalah'},
-                    { text: 'Ekspresikan diri', callback_data: 'ekspresi'}
+                    { text: '⛅️', callback_data: 'masalah'},
+                    { text: '✨', callback_data: 'ekspresi'}
                 ],
                 [
-                    { text: 'Cuba perhatikan perkara yang baik', callback_data: 'perkara'},
+                    { text: '☘️', callback_data: 'perkara'},
                 ],
                 [
-                    { text: '"HELP MESSAGE"', callback_data: 'help'},
+                    { text: 'Bantuan', callback_data: 'help'},
                 ]
             ]
         }
@@ -1028,11 +1026,9 @@ bot.action('tips', ctx => {
 })
 
 bot.action('senaman', ctx => {
-    bot.telegram.sendMessage(ctx.chat.id, `
-    Berjalan kaki selama 15 hingga 30 minit setiap hari - atau menari, berjoging, atau basikal jika anda mahu. 
-    Orang yang mengalami kemurungan mungkin tidak merasa seperti aktif. Tetapi jadikan diri anda tetap melakukannya 
-    (minta rakan untuk bersenam jika anda perlu diberi motivasi). 
-    Sebaik sahaja anda terbiasa dengan latihan, tidak akan mengambil masa yang lama untuk melihat perbezaan mood anda. 😚`,
+    bot.telegram.sendMessage(ctx.chat.id, `🏃🏻‍♀️ Senaman 🏃🏻‍♀️
+    Berjalan kaki selama 15 hingga 30 minit setiap hari - atau menari, berjoging, atau basikal jika anda mahu. Orang yang mengalami kemurungan mungkin tidak merasa seperti aktif. Tetapi jadikan diri anda tetap melakukannya 
+(minta rakan untuk bersenam jika anda perlu diberi motivasi). Sebaik sahaja anda terbiasa dengan latihan, tidak akan mengambil masa yang lama untuk melihat perbezaan mood anda. `,
     {
         reply_markup: {
             inline_keyboard: [
@@ -1045,11 +1041,10 @@ bot.action('senaman', ctx => {
 })
 
 bot.action('makan', ctx => {
-    bot.telegram.sendMessage(ctx.chat.id, `
-    Kemurungan boleh mempengaruhi selera makan. Seseorang mungkin tidak merasa makan sama sekali, tetapi yang lain mungkin makan berlebihan. 
-    Sekiranya kemurungan mempengaruhi makanan anda, anda perlu lebih berhati-hati untuk mendapatkan makanan yang betul. 
-    Pemakanan yang betul dapat mempengaruhi mood dan tenaga seseorang. Oleh itu, makan banyak buah-buahan dan sayur-sayuran dan dapatkan makanan biasa 
-    (walaupun anda tidak merasa lapar, cubalah makan sesuatu yang ringan, seperti sepotong buah, agar anda terus berjalan). 😚 `,
+    bot.telegram.sendMessage(ctx.chat.id, `🍏 Memelihara diri dengan pemakanan yang baik 🍏
+    Kemurungan boleh mempengaruhi selera makan. Seseorang mungkin tidak merasa makan sama sekali, tetapi yang lain mungkin makan berlebihan. Sekiranya kemurungan mempengaruhi makanan anda, anda perlu lebih berhati-hati untuk mendapatkan makanan yang betul. 
+Pemakanan yang betul dapat mempengaruhi mood dan tenaga seseorang. Oleh itu, makan banyak buah-buahan dan sayur-sayuran dan dapatkan makanan biasa 
+(walaupun anda tidak merasa lapar, cubalah makan sesuatu yang ringan, seperti sepotong buah, agar anda terus berjalan).  `,
     {
         reply_markup: {
             inline_keyboard: [
@@ -1062,11 +1057,11 @@ bot.action('makan', ctx => {
 })
 
 bot.action('masalah', ctx => {
-    bot.telegram.sendMessage(ctx.chat.id, `
+    bot.telegram.sendMessage(ctx.chat.id, `⛅️ Kenal pasti masalah, tetapi jangan memikirkannya ⛅️
     Cuba kenal pasti keadaan yang menyebabkan kemurungan anda. 
     Apabila anda tahu apa yang membuat anda merasa biru dan mengapa, 
     berbincanglah dengan rakan yang prihatin. 
-    Bercakap adalah cara untuk melepaskan perasaan dan menerima pemahaman. 😚 `,
+    Bercakap adalah cara untuk melepaskan perasaan dan menerima pemahaman.  `,
     {
         reply_markup: {
             inline_keyboard: [
@@ -1079,11 +1074,10 @@ bot.action('masalah', ctx => {
 })
 
 bot.action('ekspresi', ctx => {
-    bot.telegram.sendMessage(ctx.chat.id, `
+    bot.telegram.sendMessage(ctx.chat.id, `✨ Ekspresikan diri ✨
     Dengan kemurungan, kreativiti dan keseronokan seseorang mungkin tersekat. Lakukan imaginasi anda (melukis, melukis, mencoret-coret,
-    menjahit, menulis, menari, menyusun muzik, dan lain-lain) dan anda bukan sahaja membuat jus kreatif mengalir, anda juga melonggarkan 
-    beberapa emosi positif. Luangkan masa untuk bermain dengan rakan atau haiwan kesayangan, atau buat sesuatu yang menyeronokkan untuk diri sendiri. 
-    Cari sesuatu untuk ditertawakan - mungkin filem yang lucu. Ketawa membantu meringankan mood anda. 😚 `,
+menjahit, menulis, menari, menyusun muzik, dan lain-lain) dan anda bukan sahaja membuat jus kreatif mengalir, anda juga melonggarkan beberapa emosi positif. Luangkan masa untuk bermain dengan rakan atau haiwan kesayangan, atau buat sesuatu yang menyeronokkan untuk diri sendiri. 
+Cari sesuatu untuk ditertawakan - mungkin filem yang lucu. Ketawa membantu meringankan mood anda.  `,
     {
         reply_markup: {
             inline_keyboard: [
@@ -1096,11 +1090,11 @@ bot.action('ekspresi', ctx => {
 })
 
 bot.action('perkara', ctx => {
-    bot.telegram.sendMessage(ctx.chat.id, `
+    bot.telegram.sendMessage(ctx.chat.id, `☘️ Cuba perhatikan perkara yang baik ☘️
     Depresi mempengaruhi pemikiran seseorang, menjadikan semuanya kelihatan suram, negatif, dan putus asa. 
-    Sekiranya anda mengalami kemurungan hanya melihat yang negatif, berusahalah untuk memperhatikan perkara baik dalam hidup. 
-    Cuba perhatikan satu perkara, kemudian cuba fikirkan satu perkara lagi. Pertimbangkan kekuatan, hadiah, atau berkat anda. 
-    Yang paling penting, jangan lupa bersabar dengan diri sendiri. Depresi memerlukan masa untuk sembuh. 😚 `,
+Sekiranya anda mengalami kemurungan hanya melihat yang negatif, berusahalah untuk memperhatikan perkara baik dalam hidup. 
+Cuba perhatikan satu perkara, kemudian cuba fikirkan satu perkara lagi. Pertimbangkan kekuatan, hadiah, atau berkat anda. 
+Yang paling penting, jangan lupa bersabar dengan diri sendiri. Depresi memerlukan masa untuk sembuh. 😚 `,
     {
         reply_markup: {
             inline_keyboard: [
