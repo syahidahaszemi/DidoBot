@@ -13,6 +13,8 @@ const Telegraf = require('telegraf');
 // https://shrouded-springs-65878.herokuapp.com/ and https://git.heroku.com/shrouded-springs-65878.git server heroku
 
 const bot = new Telegraf('1410566262:AAFHgqkaSFVYeQU5liSJ1_VGWACn2pWuh3Q');
+            
+
 
 
 const axios = require('axios');
