@@ -2,9 +2,9 @@ const Telegraf = require('telegraf');
 //const { Composer } = require('micro-bot')
 //const bot = new Composer
 
-bot.start((ctx) => {
+/*bot.start((ctx) => {
     ctx.reply('Hello apa khabar! Saya Dido')
-})
+})*/
 
 // shrouded-springs-65878 id heroku
 // https://shrouded-springs-65878.herokuapp.com/ and https://git.heroku.com/shrouded-springs-65878.git server heroku
