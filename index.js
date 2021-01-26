@@ -37,7 +37,7 @@ function dbcon(){
 
     setInterval(function () {
         conn.query('SELECT 1');
-    }, 80000);
+    }, 5000);
     conn.query("SELECT * FROM gettoknow", function (err, result, fields){
         if(err){
             throw err;
