@@ -341,7 +341,7 @@ bot.action('S_2', ctx => {
         reply_markup: {
             inline_keyboard: [
                 [
-                    {text: 'Ya', callback_data: 'S_4'}
+                    {text: 'Ya', callback_data: 'S_4'},
                     {text: 'No', callback_data: 'S_5'}                    
                 ]
             ]
