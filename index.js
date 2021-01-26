@@ -11,7 +11,9 @@ const Telegraf = require('telegraf');
 
 //desolate-bastion-30036
 //https://desolate-bastion-30036.herokuapp.com/ | https://git.heroku.com/desolate-bastion-30036.git
+//https://shrouded-springs-65878.herokuapp.com/
 
+//boturl : https://api.telegram.org/bot1410566262:AAFHgqkaSFVYeQU5liSJ1_VGWACn2pWuh3Q/setWebhook?url=https://shrouded-springs-65878.herokuapp.com/
 
 const bot = new Telegraf('1410566262:AAFHgqkaSFVYeQU5liSJ1_VGWACn2pWuh3Q');
             
@@ -112,6 +114,7 @@ function dbcon(){
 const helpMessage = `
     Untuk memulakan perbualan:
     /start
+    
     @DiidooBot
 
     Untuk bantuan kecemasan:
