@@ -9,9 +9,9 @@ const Telegraf = require('telegraf');
     ctx.reply('Hello apa khabar! Saya Dido')
 })*/
 
-//https://shrouded-plateau-24684.herokuapp.com/
-// shrouded-springs-65878 id heroku
-// https://shrouded-springs-65878.herokuapp.com/ and https://git.heroku.com/shrouded-springs-65878.git server heroku
+//desolate-bastion-30036
+//https://desolate-bastion-30036.herokuapp.com/ | https://git.heroku.com/desolate-bastion-30036.git
+
 
 const bot = new Telegraf('1410566262:AAFHgqkaSFVYeQU5liSJ1_VGWACn2pWuh3Q');
             
@@ -23,11 +23,12 @@ const axios = require('axios');
 const mysql = require('mysql');
 
 //mysql://b1d5a4ba692efd:68747ae9@us-cdbr-east-02.cleardb.com/heroku_5be77b62e4f10d6?reconnect=true
+//mysql://b5db2f8846099d:48cb9f6c@us-cdbr-east-03.cleardb.com/heroku_3b3e07f0ee19ab1?reconnect=true
 const conn = mysql.createConnection({
-    host: "us-cdbr-east-02.cleardb.com", 
-    user: "b1d5a4ba692efd", 
-    password: "68747ae9", 
-    database: "heroku_5be77b62e4f10d6" 
+    host: "us-cdbr-east-03.cleardb.com", 
+    user: "b5db2f8846099d", 
+    password: "48cb9f6c", 
+    database: "heroku_3b3e07f0ee19ab1" 
 })
 
 dbcon();
