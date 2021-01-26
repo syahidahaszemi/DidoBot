@@ -25,10 +25,10 @@ const mysql = require('mysql');
 //mysql://b1d5a4ba692efd:68747ae9@us-cdbr-east-02.cleardb.com/heroku_5be77b62e4f10d6?reconnect=true
 //mysql://b5db2f8846099d:48cb9f6c@us-cdbr-east-03.cleardb.com/heroku_3b3e07f0ee19ab1?reconnect=true
 const conn = mysql.createConnection({
-    host: "us-cdbr-east-03.cleardb.com", 
-    user: "b5db2f8846099d", 
-    password: "48cb9f6c", 
-    database: "heroku_3b3e07f0ee19ab1" 
+    host: "us-cdbr-east-02.cleardb.com", 
+    user: "b1d5a4ba692efd", 
+    password: "68747ae9", 
+    database: "heroku_5be77b62e4f10d6" 
 })
 
 dbcon();
@@ -112,6 +112,7 @@ function dbcon(){
 const helpMessage = `
     Untuk memulakan perbualan:
     /start
+    
     @DiidooBot
 
     Untuk bantuan kecemasan:
