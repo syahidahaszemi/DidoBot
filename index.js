@@ -297,13 +297,24 @@ bot.action('moodsurvey', ctx => {
 
 bot.action('S_1', ctx => {
     ctx.deleteMessage();
-    bot.telegram.sendMessage(ctx.chat.id, `Sila jawab soalan dengan /S1 *jawapan* Contoh: /S1 ya
+    ctx.reply(`Sila jawab soalan dengan /S1 *jawapan* Contoh: /S1 ya
 
     Soalan 1:
-    Jadi, anda sekarang ada ahli terapi? (ya/tidak)`);
+    Jadi, anda sekarang ada ahli terapi? (ya/tidak)`,
+    {
+        reply_markup: {
+            inline_keyboard: [
+                [
+                    {text: 'Ya', callback_data: 'S1'},
+                    {text: 'No', callback_data: 'S1'}                    
+                ]
+            ]
+        }
+    })  
+    bot.telegram.sendMessage(ctx.chat.id, );
 })
 
-bot.command('S1', ctx => {
+bot.action('S1', ctx => {
     let input = ctx.message.text.split(" ");
     if(input.length != 2){
         ctx.reply("Anda harus memberi nama mood pada argument ke 2");
@@ -335,7 +346,7 @@ bot.command('S1', ctx => {
 
 bot.action('S_2', ctx => {
     ctx.deleteMessage();
-
+    
     ctx.reply(`Adakah doktor atau ahli terapi anda sarankan aplikasi mudah alih?`,
     {
         reply_markup: {
