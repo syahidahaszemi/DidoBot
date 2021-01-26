@@ -335,18 +335,14 @@ bot.command('S1', ctx => {
 
 bot.action('S_2', ctx => {
     ctx.deleteMessage();
-    bot.telegram.sendMessage(ctx.chat.id, `Sila jawab soalan dengan /S2 jawapan Contoh: /S2 tidak 
 
-    Soalan 2:
-    Adakah doktor atau ahli terapi anda sarankan aplikasi mudah alih? (ya/tidak)`);
-
-    ctx.reply(`👇🏻`,
+    ctx.reply(`Adakah doktor atau ahli terapi anda sarankan aplikasi mudah alih?`,
     {
         reply_markup: {
             inline_keyboard: [
                 [
                     {text: 'Ya', callback_data: 'S_4'}
-                    {text: 'Tidak', callback_data: 'S_5'}                    
+                    {text: 'No', callback_data: 'S_5'}                    
                 ]
             ]
         }
