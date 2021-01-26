@@ -112,7 +112,6 @@ function dbcon(){
 const helpMessage = `
     Untuk memulakan perbualan:
     /start
-    
     @DiidooBot
 
     Untuk bantuan kecemasan:
