@@ -231,26 +231,41 @@ bot.action('boleh', ctx => {
 
 //mood//
 bot.command('startmood', ctx => { 
-    bot.telegram.sendMessage(ctx.chat.id,  `Sila taip /mood *mood awak* daripada pilihan yang di bawah ini. Contoh: /mood Kemurungan
-    🌙 Kemurungan (Depression)
-    🌙 Kegelisahan (Anxiety)
-    🌙 Kesedihan (Sadness)
-    🌙 Kekosongan (Emptiness)
-    🌙 Tidur (Sleep Problems)
-    🌙 Hubungan (Relationships Problem)
-    🌙 Kemarahan (Anger)
-    🌙 Kesunyian (Loneliness)
-    🌙 Tekanan (Stress)
-    `);
+    bot.telegram.sendMessage(ctx.chat.id, `🌙 Apa perasaan awak pada ketika ini? 🌙`,
+    {
+        reply_markup: {
+            inline_keyboard: [
+                [
+                    {text: 'Kemurungan (Depression)', callback_data: 'mood1'},
+                    {text: 'Kegelisahan (Anxiety)', callback_data: 'mood2'}
+                ],
+                [
+                    {text: 'Kesedihan (Sadness)', callback_data: 'mood3'},
+                    {text: 'Kekosongan (Emptiness)', callback_data: 'mood4'}
+                ],
+                [
+                    {text: 'Tidur (Sleep Problems)', callback_data: 'mood5'},
+                    {text: 'Hubungan (Relationships Problem)', callback_data: 'mood6'}
+                ],
+                [
+                    {text: 'Kemarahan (Anger)', callback_data: 'mood7'},
+                    {text: 'Kesunyian (Loneliness)', callback_data: 'mood8'}
+                ],
+                [
+                    {text: 'Tekanan (Stress)', callback_data: 'mood9'}
+                ]
+            ]
+        }
+    })    
 })
 
-bot.command('mood', ctx => {
-    let input = ctx.message.text.split(" ");
-    if(input.length != 2){
-        ctx.reply("Anda harus memberi nama mood pada argument ke 2");
-        return;
-    }
-    let gettoknowMood = input[1];
+bot.action('mood1', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let gettoknowMood = "Kemurungan";
     bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A DAILY MOOD USER
     ID: ${ctx.chat.id}
     Mood: ${gettoknowMood}`);
@@ -274,6 +289,260 @@ bot.command('mood', ctx => {
         dbcon();
     })
 })
+
+bot.action('mood2', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let gettoknowMood = "Kegelisahan";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A DAILY MOOD USER
+    ID: ${ctx.chat.id}
+    Mood: ${gettoknowMood}`);
+    var sql = `INSERT INTO gettoknow (mood, telegram_id, first_name, username, type) VALUES ('${gettoknowMood}', '${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${ctx.chat.type}')`;
+    conn.query(sql, function(err, result){
+        if(err){
+            throw err;
+        };
+        console.log(`data ${gettoknowMood} berhasil ditambahkan ke database`)
+        ctx.reply(`Oh, ${gettoknowMood}..`);
+        ctx.reply(`Mesti agak sukar untuk awak, ${ctx.chat.username}. Tapi awak datang pada tempat yang betul.`,
+        {
+            reply_markup: {
+                inline_keyboard: [
+                    [
+                        {text: '😊', callback_data: 'moodsurvey'}
+                    ]
+                ]
+            }
+        })
+        dbcon();
+    })
+})
+
+bot.action('mood3', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let gettoknowMood = "Kesedihan";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A DAILY MOOD USER
+    ID: ${ctx.chat.id}
+    Mood: ${gettoknowMood}`);
+    var sql = `INSERT INTO gettoknow (mood, telegram_id, first_name, username, type) VALUES ('${gettoknowMood}', '${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${ctx.chat.type}')`;
+    conn.query(sql, function(err, result){
+        if(err){
+            throw err;
+        };
+        console.log(`data ${gettoknowMood} berhasil ditambahkan ke database`)
+        ctx.reply(`Oh, ${gettoknowMood}..`);
+        ctx.reply(`Mesti agak sukar untuk awak, ${ctx.chat.username}. Tapi awak datang pada tempat yang betul.`,
+        {
+            reply_markup: {
+                inline_keyboard: [
+                    [
+                        {text: '😊', callback_data: 'moodsurvey'}
+                    ]
+                ]
+            }
+        })
+        dbcon();
+    })
+})
+
+bot.action('mood4', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let gettoknowMood = "Kekosongan";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A DAILY MOOD USER
+    ID: ${ctx.chat.id}
+    Mood: ${gettoknowMood}`);
+    var sql = `INSERT INTO gettoknow (mood, telegram_id, first_name, username, type) VALUES ('${gettoknowMood}', '${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${ctx.chat.type}')`;
+    conn.query(sql, function(err, result){
+        if(err){
+            throw err;
+        };
+        console.log(`data ${gettoknowMood} berhasil ditambahkan ke database`)
+        ctx.reply(`Oh, ${gettoknowMood}..`);
+        ctx.reply(`Mesti agak sukar untuk awak, ${ctx.chat.username}. Tapi awak datang pada tempat yang betul.`,
+        {
+            reply_markup: {
+                inline_keyboard: [
+                    [
+                        {text: '😊', callback_data: 'moodsurvey'}
+                    ]
+                ]
+            }
+        })
+        dbcon();
+    })
+})
+
+
+bot.action('mood5', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let gettoknowMood = "Tidur";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A DAILY MOOD USER
+    ID: ${ctx.chat.id}
+    Mood: ${gettoknowMood}`);
+    var sql = `INSERT INTO gettoknow (mood, telegram_id, first_name, username, type) VALUES ('${gettoknowMood}', '${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${ctx.chat.type}')`;
+    conn.query(sql, function(err, result){
+        if(err){
+            throw err;
+        };
+        console.log(`data ${gettoknowMood} berhasil ditambahkan ke database`)
+        ctx.reply(`Oh, ${gettoknowMood}..`);
+        ctx.reply(`Mesti agak sukar untuk awak, ${ctx.chat.username}. Tapi awak datang pada tempat yang betul.`,
+        {
+            reply_markup: {
+                inline_keyboard: [
+                    [
+                        {text: '😊', callback_data: 'moodsurvey'}
+                    ]
+                ]
+            }
+        })
+        dbcon();
+    })
+})
+
+
+bot.action('mood6', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let gettoknowMood = "Hubungan";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A DAILY MOOD USER
+    ID: ${ctx.chat.id}
+    Mood: ${gettoknowMood}`);
+    var sql = `INSERT INTO gettoknow (mood, telegram_id, first_name, username, type) VALUES ('${gettoknowMood}', '${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${ctx.chat.type}')`;
+    conn.query(sql, function(err, result){
+        if(err){
+            throw err;
+        };
+        console.log(`data ${gettoknowMood} berhasil ditambahkan ke database`)
+        ctx.reply(`Oh, ${gettoknowMood}..`);
+        ctx.reply(`Mesti agak sukar untuk awak, ${ctx.chat.username}. Tapi awak datang pada tempat yang betul.`,
+        {
+            reply_markup: {
+                inline_keyboard: [
+                    [
+                        {text: '😊', callback_data: 'moodsurvey'}
+                    ]
+                ]
+            }
+        })
+        dbcon();
+    })
+})
+
+
+bot.action('mood7', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let gettoknowMood = "Kemarahan";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A DAILY MOOD USER
+    ID: ${ctx.chat.id}
+    Mood: ${gettoknowMood}`);
+    var sql = `INSERT INTO gettoknow (mood, telegram_id, first_name, username, type) VALUES ('${gettoknowMood}', '${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${ctx.chat.type}')`;
+    conn.query(sql, function(err, result){
+        if(err){
+            throw err;
+        };
+        console.log(`data ${gettoknowMood} berhasil ditambahkan ke database`)
+        ctx.reply(`Oh, ${gettoknowMood}..`);
+        ctx.reply(`Mesti agak sukar untuk awak, ${ctx.chat.username}. Tapi awak datang pada tempat yang betul.`,
+        {
+            reply_markup: {
+                inline_keyboard: [
+                    [
+                        {text: '😊', callback_data: 'moodsurvey'}
+                    ]
+                ]
+            }
+        })
+        dbcon();
+    })
+})
+
+
+bot.action('mood8', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let gettoknowMood = "Kesunyian";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A DAILY MOOD USER
+    ID: ${ctx.chat.id}
+    Mood: ${gettoknowMood}`);
+    var sql = `INSERT INTO gettoknow (mood, telegram_id, first_name, username, type) VALUES ('${gettoknowMood}', '${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${ctx.chat.type}')`;
+    conn.query(sql, function(err, result){
+        if(err){
+            throw err;
+        };
+        console.log(`data ${gettoknowMood} berhasil ditambahkan ke database`)
+        ctx.reply(`Oh, ${gettoknowMood}..`);
+        ctx.reply(`Mesti agak sukar untuk awak, ${ctx.chat.username}. Tapi awak datang pada tempat yang betul.`,
+        {
+            reply_markup: {
+                inline_keyboard: [
+                    [
+                        {text: '😊', callback_data: 'moodsurvey'}
+                    ]
+                ]
+            }
+        })
+        dbcon();
+    })
+})
+
+
+bot.action('mood9', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let gettoknowMood = "Tekanan";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A DAILY MOOD USER
+    ID: ${ctx.chat.id}
+    Mood: ${gettoknowMood}`);
+    var sql = `INSERT INTO gettoknow (mood, telegram_id, first_name, username, type) VALUES ('${gettoknowMood}', '${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${ctx.chat.type}')`;
+    conn.query(sql, function(err, result){
+        if(err){
+            throw err;
+        };
+        console.log(`data ${gettoknowMood} berhasil ditambahkan ke database`)
+        ctx.reply(`Oh, ${gettoknowMood}..`);
+        ctx.reply(`Mesti agak sukar untuk awak, ${ctx.chat.username}. Tapi awak datang pada tempat yang betul.`,
+        {
+            reply_markup: {
+                inline_keyboard: [
+                    [
+                        {text: '😊', callback_data: 'moodsurvey'}
+                    ]
+                ]
+            }
+        })
+        dbcon();
+    })
+})
+
 //mood//
 
 //mood survey//
@@ -297,16 +566,15 @@ bot.action('moodsurvey', ctx => {
 
 bot.action('S_1', ctx => {
     ctx.deleteMessage();
-    ctx.reply(`Sila jawab soalan dengan /S1 *jawapan* Contoh: /S1 ya
-
-    Soalan 1:
-    Jadi, anda sekarang ada ahli terapi? (ya/tidak)`,
+    ctx.reply(`
+    💫 Soalan 1:
+        Jadi, anda sekarang ada ahli terapi? (ya/tidak)`,
     {
         reply_markup: {
             inline_keyboard: [
                 [
-                    {text: 'Ya', callback_data: 'S1'},
-                    {text: 'No', callback_data: 'S1'}                    
+                    {text: 'Ya', callback_data: 'S1Y'},
+                    {text: 'Tidak', callback_data: 'S1N'}                    
                 ]
             ]
         }
@@ -314,14 +582,14 @@ bot.action('S_1', ctx => {
     bot.telegram.sendMessage(ctx.chat.id, );
 })
 
-bot.action('S1', ctx => {
-    let input = ctx.message.text.split(" ");
-    if(input.length != 2){
-        ctx.reply("Anda harus memberi nama mood pada argument ke 2");
-        return;
-    }
-    let moodsurveyS1= input[1];
-    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S1
+bot.action('S1Y', ctx => {
+    //let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let moodsurveyS1= "Ya";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION 1
     ID: ${ctx.chat.id}
     Mood: ${moodsurveyS1}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s1) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS1}')`;
@@ -329,7 +597,37 @@ bot.action('S1', ctx => {
         if(err){
             throw err;
         };
-        console.log(`data "${moodsurveyS1}" berhasil ditambahkan ke database`)
+        console.log(`data S1 "${moodsurveyS1}" berhasil ditambahkan ke database`)
+        ctx.reply(`👇🏻`,
+        {
+            reply_markup: {
+                inline_keyboard: [
+                    [
+                        {text: 'Seterusnya', callback_data: 'S_2'}
+                    ]
+                ]
+            }
+        })
+        dbcon();
+    })
+})
+
+bot.action('S1N', ctx => {
+    //let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let moodsurveyS1= "Tidak";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION 1
+    ID: ${ctx.chat.id}
+    Mood: ${moodsurveyS1}`);
+    var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s1) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS1}')`;
+    conn.query(sql, function(err, result){
+        if(err){
+            throw err;
+        };
+        console.log(`data S1 "${moodsurveyS1}" berhasil ditambahkan ke database`)
         ctx.reply(`👇🏻`,
         {
             reply_markup: {
@@ -347,27 +645,29 @@ bot.action('S1', ctx => {
 bot.action('S_2', ctx => {
     ctx.deleteMessage();
     
-    ctx.reply(`Adakah doktor atau ahli terapi anda sarankan aplikasi mudah alih?`,
+    ctx.reply(`
+    💫 Soalan 2:
+        Adakah doktor atau ahli terapi anda sarankan aplikasi mudah alih?`,
     {
         reply_markup: {
             inline_keyboard: [
                 [
-                    {text: 'Ya', callback_data: 'S_4'},
-                    {text: 'No', callback_data: 'S_5'}                    
+                    {text: 'Ya', callback_data: 'S2Y'},
+                    {text: 'Tidak', callback_data: 'S2N'}                    
                 ]
             ]
         }
     })    
 })
 
-bot.command('S2', ctx => {
-    let input = ctx.message.text.split(" ");
-    if(input.length != 2){
-        ctx.reply("Amaran! Anda harus memberi nama mood pada argument ke 2");
-        return;
-    }
-    let moodsurveyS2= input[1];
-    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S2
+bot.action('S2Y', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Amaran! Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let moodsurveyS2= "Ya";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION 2
     ID: ${ctx.chat.id}
     Mood: ${moodsurveyS2}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s2) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS2}')`;
@@ -375,7 +675,37 @@ bot.command('S2', ctx => {
         if(err){
             throw err;
         };
-        console.log(`data "${moodsurveyS2}" berhasil ditambahkan ke database`)
+        console.log(`data S2 "${moodsurveyS2}" berhasil ditambahkan ke database`)
+        ctx.reply(`👇🏻`,
+        {
+            reply_markup: {
+                inline_keyboard: [
+                    [
+                        {text: 'Seterusnya', callback_data: 'S_3'}
+                    ]
+                ]
+            }
+        })
+        dbcon();
+    })
+})
+
+bot.action('S2N', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Amaran! Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let moodsurveyS2= "Tidak";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION 2
+    ID: ${ctx.chat.id}
+    Mood: ${moodsurveyS2}`);
+    var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s2) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS2}')`;
+    conn.query(sql, function(err, result){
+        if(err){
+            throw err;
+        };
+        console.log(`data S2 "${moodsurveyS2}" berhasil ditambahkan ke database`)
         ctx.reply(`👇🏻`,
         {
             reply_markup: {
@@ -393,20 +723,29 @@ bot.command('S2', ctx => {
 bot.action('S_3', ctx => {
     ctx.deleteMessage();
     
-    bot.telegram.sendMessage(ctx.chat.id, `Sila jawab soalan dengan /S3 *jawapan* Contoh: /S3 tidak
-
-    Soalan 3:
-    Adakah anda pernah didiagnosis dengan keadaan kesihatan mental? (ya/tidak)`);
+    ctx.reply(`
+    💫 Soalan 3:
+        Adakah anda pernah didiagnosis dengan keadaan kesihatan mental? (ya/tidak)`,
+    {
+        reply_markup: {
+            inline_keyboard: [
+                [
+                    {text: 'Ya', callback_data: 'S3Y'},
+                    {text: 'Tidak', callback_data: 'S3N'}                    
+                ]
+            ]
+        }
+    }) 
 })
 
-bot.command('S3', ctx => {
-    let input = ctx.message.text.split(" ");
-    if(input.length != 2){
-        ctx.reply("Anda harus memberi nama mood pada argument ke 2");
-        return;
-    }
-    let moodsurveyS3= input[1];
-    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S3
+bot.action('S3Y', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let moodsurveyS3= "Ya";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION 3
     ID: ${ctx.chat.id}
     Mood: ${moodsurveyS3}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s3) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS3}')`;
@@ -414,7 +753,37 @@ bot.command('S3', ctx => {
         if(err){
             throw err;
         };
-        console.log(`data "${moodsurveyS3}" berhasil ditambahkan ke database`)
+        console.log(`data S3 "${moodsurveyS3}" berhasil ditambahkan ke database`)
+        ctx.reply(`👇🏻`,
+        {
+            reply_markup: {
+                inline_keyboard: [
+                    [
+                        {text: 'Seterusnya', callback_data: 'S_4'}
+                    ]
+                ]
+            }
+        })
+        dbcon();
+    })
+})
+
+bot.action('S3N', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let moodsurveyS3= "Tidak";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION 3
+    ID: ${ctx.chat.id}
+    Mood: ${moodsurveyS3}`);
+    var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s3) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS3}')`;
+    conn.query(sql, function(err, result){
+        if(err){
+            throw err;
+        };
+        console.log(`data S3 "${moodsurveyS3}" berhasil ditambahkan ke database`)
         ctx.reply(`👇🏻`,
         {
             reply_markup: {
@@ -431,20 +800,29 @@ bot.command('S3', ctx => {
 
 bot.action('S_4', ctx => {
     ctx.deleteMessage();
-    bot.telegram.sendMessage(ctx.chat.id, `Sila jawab soalan dengan /S4 *jawapan* Contoh: /S4 ya
-
-    Soalan 4:
-    Adakah anda sedang mengambil ubat-ubatan untuk keadaan kesihatan mental? (ya/tidak)`);
+    ctx.reply(`
+    💫 Soalan 4:
+        Adakah anda sedang mengambil ubat-ubatan untuk keadaan kesihatan mental? (ya/tidak)`, 
+    {
+        reply_markup: {
+            inline_keyboard: [
+                [
+                    {text: 'Ya', callback_data: 'S4Y'},
+                    {text: 'Tidak', callback_data: 'S4N'}                    
+                ]
+            ]
+        }
+    }) 
 })
 
-bot.command('S4', ctx => {
-    let input = ctx.message.text.split(" ");
-    if(input.length != 2){
-        ctx.reply("Anda harus memberi nama mood pada argument ke 2");
-        return;
-    }
-    let moodsurveyS4= input[1];
-    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S4
+bot.action('S4Y', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let moodsurveyS4= "Ya";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION 4
     ID: ${ctx.chat.id}
     Mood: ${moodsurveyS4}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s4) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS4}')`;
@@ -452,7 +830,37 @@ bot.command('S4', ctx => {
         if(err){
             throw err;
         };
-        console.log(`data "${moodsurveyS4}" berhasil ditambahkan ke database`)
+        console.log(`data S4 "${moodsurveyS4}" berhasil ditambahkan ke database`)
+        ctx.reply(`👇🏻`,
+        {
+            reply_markup: {
+                inline_keyboard: [
+                    [
+                        {text: 'Seterusnya', callback_data: 'S_5'}
+                    ]
+                ]
+            }
+        })
+        dbcon();
+    })
+})
+
+bot.action('S4N', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let moodsurveyS4= "Tidak";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION 4
+    ID: ${ctx.chat.id}
+    Mood: ${moodsurveyS4}`);
+    var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s4) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS4}')`;
+    conn.query(sql, function(err, result){
+        if(err){
+            throw err;
+        };
+        console.log(`data S4 "${moodsurveyS4}" berhasil ditambahkan ke database`)
         ctx.reply(`👇🏻`,
         {
             reply_markup: {
@@ -469,20 +877,29 @@ bot.command('S4', ctx => {
 
 bot.action('S_5', ctx => {
     ctx.deleteMessage();
-    bot.telegram.sendMessage(ctx.chat.id, `Sila jawab soalan dengan /S5 *jawapan* Contoh: /S5 tidak
-
-    Soalan 5:
-    Adakah anda pernah mengguna aplikasi seperti Dido ini? (ya/tidak)`);
+    ctx.reply(`
+    💫 Soalan 5:
+        Adakah anda pernah mengguna aplikasi seperti Dido ini? (ya/tidak)`, 
+    {
+        reply_markup: {
+            inline_keyboard: [
+                [
+                    {text: 'Ya', callback_data: 'S5Y'},
+                    {text: 'Tidak', callback_data: 'S5N'}                    
+                ]
+            ]
+        }
+    }) 
 })
 
-bot.command('S5', ctx => {
-    let input = ctx.message.text.split(" ");
-    if(input.length != 2){
-        ctx.reply("Anda harus memberi nama mood pada argument ke 2");
-        return;
-    }
-    let moodsurveyS5= input[1];
-    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S5
+bot.action('S5Y', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let moodsurveyS5= "Ya";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION 5
     ID: ${ctx.chat.id}
     Mood: ${moodsurveyS5}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s5) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS5}')`;
@@ -490,7 +907,37 @@ bot.command('S5', ctx => {
         if(err){
             throw err;
         };
-        console.log(`data "${moodsurveyS5}" berhasil ditambahkan ke database`)
+        console.log(`data S5 "${moodsurveyS5}" berhasil ditambahkan ke database`)
+        ctx.reply(`👇🏻`,
+        {
+            reply_markup: {
+                inline_keyboard: [
+                    [
+                        {text: 'Seterusnya', callback_data: 'S_6'}
+                    ]
+                ]
+            }
+        })
+        dbcon();
+    })
+})
+
+bot.action('S5N', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let moodsurveyS5= "Tidak";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION 5
+    ID: ${ctx.chat.id}
+    Mood: ${moodsurveyS5}`);
+    var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s5) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS5}')`;
+    conn.query(sql, function(err, result){
+        if(err){
+            throw err;
+        };
+        console.log(`data S5 "${moodsurveyS5}" berhasil ditambahkan ke database`)
         ctx.reply(`👇🏻`,
         {
             reply_markup: {
@@ -507,20 +954,29 @@ bot.command('S5', ctx => {
 
 bot.action('S_6', ctx => {
     ctx.deleteMessage();
-    bot.telegram.sendMessage(ctx.chat.id, `Sila jawab soalan dengan /S6 *jawapan* Contoh: /S6 ya
-
-    Soalan 6:
-    Adakah anda rasa Dido dapat membantu anda? (ya/tidak)`);
+    ctx.reply(`
+    💫 Soalan 6:
+        Adakah anda rasa Dido dapat membantu anda? (ya/tidak)`,
+    {
+        reply_markup: {
+            inline_keyboard: [
+                [
+                    {text: 'Ya', callback_data: 'S6Y'},
+                    {text: 'Tidak', callback_data: 'S6N'}                    
+                ]
+            ]
+        }
+    }) 
 })
 
-bot.command('S6', ctx => {
-    let input = ctx.message.text.split(" ");
-    if(input.length != 2){
-        ctx.reply("Anda harus memberi nama mood pada argument ke 2");
-        return;
-    }
-    let moodsurveyS6= input[1];
-    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S6
+bot.action('S6Y', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let moodsurveyS6= "Ya";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION 6
     ID: ${ctx.chat.id}
     Mood: ${moodsurveyS6}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s6) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS6}')`;
@@ -528,7 +984,37 @@ bot.command('S6', ctx => {
         if(err){
             throw err;
         };
-        console.log(`data "${moodsurveyS6}" berhasil ditambahkan ke database`)
+        console.log(`data S6 "${moodsurveyS6}" berhasil ditambahkan ke database`)
+        ctx.reply(`👇🏻`,
+        {
+            reply_markup: {
+                inline_keyboard: [
+                    [
+                        {text: 'Seterusnya', callback_data: 'S_7'}
+                    ]
+                ]
+            }
+        })
+        dbcon();
+    })
+})
+
+bot.action('S6N', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let moodsurveyS6= "Tidak";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION 6
+    ID: ${ctx.chat.id}
+    Mood: ${moodsurveyS6}`);
+    var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s6) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS6}')`;
+    conn.query(sql, function(err, result){
+        if(err){
+            throw err;
+        };
+        console.log(`data S6 "${moodsurveyS6}" berhasil ditambahkan ke database`)
         ctx.reply(`👇🏻`,
         {
             reply_markup: {
@@ -545,29 +1031,42 @@ bot.command('S6', ctx => {
 
 bot.action('S_7', ctx => {
     ctx.deleteMessage();
-    bot.telegram.sendMessage(ctx.chat.id, `Sila jawab soalan dengan /S7 *jawapan* Contoh: /S7 b
+    ctx.reply(`
+    💫 Soalan 7:
+        Okay, sekarang saya akan tanya soalan khusus tentang apa yang anda rasa
 
-    Soalan 7:
-    Okay, sekarang saya akan tanya soalan khusus tentang apa yang anda rasa
-    Sejak 2 minggu kebelakangan ini, seberapa kerap anda terganggu dengan masalah berikut:
+        Sejak 2 minggu kebelakangan ini, seberapa kerap anda terganggu dengan masalah berikut:
         •	Sedikit minat untuk melakukan sesuatu
 
-    a. Tidak sama sekali
-    b. Beberapa hari
-    c. Lebih dari setengah hari
-    d. Hampir Setiap Hari
-
-    (a/b/c/d)`);
+        a. Tidak sama sekali
+        b. Beberapa hari
+        c. Lebih dari setengah hari
+        d. Hampir Setiap Hari
+    `,
+    {
+        reply_markup: {
+            inline_keyboard: [
+                [
+                    {text: 'a', callback_data: 'S7a'},
+                    {text: 'b', callback_data: 'S7b'}                    
+                ],
+                [
+                    {text: 'c', callback_data: 'S7c'},
+                    {text: 'd', callback_data: 'S7d'}                    
+                ]
+            ]
+        }
+    })
 })
 
-bot.command('S7', ctx => {
-    let input = ctx.message.text.split(" ");
-    if(input.length != 2){
-        ctx.reply("Anda harus memberi nama mood pada argument ke 2");
-        return;
-    }
-    let moodsurveyS7= input[1];
-    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S7
+bot.action('S7a', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let moodsurveyS7= "a";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION 7
     ID: ${ctx.chat.id}
     Mood: ${moodsurveyS7}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s7) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS7}')`;
@@ -575,7 +1074,97 @@ bot.command('S7', ctx => {
         if(err){
             throw err;
         };
-        console.log(`data "${moodsurveyS7}" berhasil ditambahkan ke database`)
+        console.log(`data S7 "${moodsurveyS7}" berhasil ditambahkan ke database`)
+        ctx.reply(`👇🏻`,
+        {
+            reply_markup: {
+                inline_keyboard: [
+                    [
+                        {text: 'Seterusnya', callback_data: 'S_8'}
+                    ]
+                ]
+            }
+        })
+        dbcon();
+    })
+})
+
+bot.action('S7b', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let moodsurveyS7= "b";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION 7
+    ID: ${ctx.chat.id}
+    Mood: ${moodsurveyS7}`);
+    var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s7) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS7}')`;
+    conn.query(sql, function(err, result){
+        if(err){
+            throw err;
+        };
+        console.log(`data S7 "${moodsurveyS7}" berhasil ditambahkan ke database`)
+        ctx.reply(`👇🏻`,
+        {
+            reply_markup: {
+                inline_keyboard: [
+                    [
+                        {text: 'Seterusnya', callback_data: 'S_8'}
+                    ]
+                ]
+            }
+        })
+        dbcon();
+    })
+})
+
+bot.action('S7c', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let moodsurveyS7= "c";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION 7
+    ID: ${ctx.chat.id}
+    Mood: ${moodsurveyS7}`);
+    var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s7) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS7}')`;
+    conn.query(sql, function(err, result){
+        if(err){
+            throw err;
+        };
+        console.log(`data S7 "${moodsurveyS7}" berhasil ditambahkan ke database`)
+        ctx.reply(`👇🏻`,
+        {
+            reply_markup: {
+                inline_keyboard: [
+                    [
+                        {text: 'Seterusnya', callback_data: 'S_8'}
+                    ]
+                ]
+            }
+        })
+        dbcon();
+    })
+})
+
+bot.action('S7d', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let moodsurveyS7= "d";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION 7
+    ID: ${ctx.chat.id}
+    Mood: ${moodsurveyS7}`);
+    var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s7) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS7}')`;
+    conn.query(sql, function(err, result){
+        if(err){
+            throw err;
+        };
+        console.log(`data S7 "${moodsurveyS7}" berhasil ditambahkan ke database`)
         ctx.reply(`👇🏻`,
         {
             reply_markup: {
@@ -592,26 +1181,39 @@ bot.command('S7', ctx => {
 
 bot.action('S_8', ctx => {
     ctx.deleteMessage();
-    bot.telegram.sendMessage(ctx.chat.id, `Sila jawab soalan dengan /S8 *jawapan* Contoh: /S8 c
-    Soalan 8:
-    Dan sejak 2 minggu kebelakangan ini, berapa kali anda terganggu dengan perasaan sedih, murung, atau putus asa?
+    ctx.reply(`
+    💫 Soalan 8:
+        Dan sejak 2 minggu kebelakangan ini, berapa kali anda terganggu dengan perasaan sedih, murung, atau putus asa?
 
-    a.	Tidak sama sekali
-    b.	Beberapa hari
-    c.	Lebih dari setengah hari
-    d.	Hampir setiap hari
-
-    (a/b/c/d)`);
+        a.	Tidak sama sekali
+        b.	Beberapa hari
+        c.	Lebih dari setengah hari
+        d.	Hampir setiap hari
+    `,
+    {
+        reply_markup: {
+            inline_keyboard: [
+                [
+                    {text: 'a', callback_data: 'S8a'},
+                    {text: 'b', callback_data: 'S8b'}                    
+                ],
+                [
+                    {text: 'c', callback_data: 'S8c'},
+                    {text: 'd', callback_data: 'S8d'}                    
+                ]
+            ]
+        }
+    })
 })
 
-bot.command('S8', ctx => {
-    let input = ctx.message.text.split(" ");
-    if(input.length != 2){
-        ctx.reply("Anda harus memberi nama mood pada argument ke 2");
-        return;
-    }
-    let moodsurveyS8= input[1];
-    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S8
+bot.action('S8a', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let moodsurveyS8= "a";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION 8
     ID: ${ctx.chat.id}
     Mood: ${moodsurveyS8}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s8) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS8}')`;
@@ -619,7 +1221,97 @@ bot.command('S8', ctx => {
         if(err){
             throw err;
         };
-        console.log(`data "${moodsurveyS8}" berhasil ditambahkan ke database`)
+        console.log(`data S8 "${moodsurveyS8}" berhasil ditambahkan ke database`)
+        ctx.reply(`👇🏻`,
+        {
+            reply_markup: {
+                inline_keyboard: [
+                    [
+                        {text: 'Seterusnya', callback_data: 'S_9'}
+                    ]
+                ]
+            }
+        })
+        dbcon();
+    })
+})
+
+bot.action('S8b', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let moodsurveyS8= "b";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION 8
+    ID: ${ctx.chat.id}
+    Mood: ${moodsurveyS8}`);
+    var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s8) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS8}')`;
+    conn.query(sql, function(err, result){
+        if(err){
+            throw err;
+        };
+        console.log(`data S8 "${moodsurveyS8}" berhasil ditambahkan ke database`)
+        ctx.reply(`👇🏻`,
+        {
+            reply_markup: {
+                inline_keyboard: [
+                    [
+                        {text: 'Seterusnya', callback_data: 'S_9'}
+                    ]
+                ]
+            }
+        })
+        dbcon();
+    })
+})
+
+bot.action('S8c', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let moodsurveyS8= "c";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION 8
+    ID: ${ctx.chat.id}
+    Mood: ${moodsurveyS8}`);
+    var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s8) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS8}')`;
+    conn.query(sql, function(err, result){
+        if(err){
+            throw err;
+        };
+        console.log(`data S8 "${moodsurveyS8}" berhasil ditambahkan ke database`)
+        ctx.reply(`👇🏻`,
+        {
+            reply_markup: {
+                inline_keyboard: [
+                    [
+                        {text: 'Seterusnya', callback_data: 'S_9'}
+                    ]
+                ]
+            }
+        })
+        dbcon();
+    })
+})
+
+bot.action('S8d', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let moodsurveyS8= "d";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION 8
+    ID: ${ctx.chat.id}
+    Mood: ${moodsurveyS8}`);
+    var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s8) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS8}')`;
+    conn.query(sql, function(err, result){
+        if(err){
+            throw err;
+        };
+        console.log(`data S8 "${moodsurveyS8}" berhasil ditambahkan ke database`)
         ctx.reply(`👇🏻`,
         {
             reply_markup: {
@@ -636,26 +1328,40 @@ bot.command('S8', ctx => {
 
 bot.action('S_9', ctx => {
     ctx.deleteMessage();
-    bot.telegram.sendMessage(ctx.chat.id, `Sila jawab soalan dengan /S9 *jawapan* Contoh: /S9 a
-    Soalan 9:
-    Dan sejak 2 minggu kebelakangan ini, berapa kali anda terganggu dengan perasaan gelisah, gementar, terdesak, atau tidak dapat berhenti atau mengawal kebimbangan?
+    ctx.reply(`
+    💫 Soalan 9:
+        Dan sejak 2 minggu kebelakangan ini, berapa kali anda terganggu dengan perasaan gelisah, gementar, terdesak, atau tidak dapat berhenti atau mengawal kebimbangan?
     
-    a.	Tidak sama sekali
-    b.	Beberapa hari
-    c.	Lebih dari setengah hari
-    d.	Hampir setiap hari
+        a.	Tidak sama sekali
+        b.	Beberapa hari
+        c.	Lebih dari setengah hari
+        d.	Hampir setiap hari
 
-    (a/b/c/d)`);
+    `,
+    {
+        reply_markup: {
+            inline_keyboard: [
+                [
+                    {text: 'a', callback_data: 'S9a'},
+                    {text: 'b', callback_data: 'S9b'}                    
+                ],
+                [
+                    {text: 'c', callback_data: 'S9c'},
+                    {text: 'd', callback_data: 'S9d'}                    
+                ]
+            ]
+        }
+    })
 })
 
-bot.command('S9', ctx => {
-    let input = ctx.message.text.split(" ");
-    if(input.length != 2){
-        ctx.reply("Anda harus memberi nama mood pada argument ke 2");
-        return;
-    }
-    let moodsurveyS9= input[1];
-    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S9
+bot.action('S9a', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let moodsurveyS9= "a";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION 9
     ID: ${ctx.chat.id}
     Mood: ${moodsurveyS9}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s9) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS9}')`;
@@ -663,7 +1369,97 @@ bot.command('S9', ctx => {
         if(err){
             throw err;
         };
-        console.log(`data "${moodsurveyS9}" berhasil ditambahkan ke database`)
+        console.log(`data S9 "${moodsurveyS9}" berhasil ditambahkan ke database`)
+        ctx.reply(`👇🏻`,
+        {
+            reply_markup: {
+                inline_keyboard: [
+                    [
+                        {text: 'Seterusnya', callback_data: 'S_10'}
+                    ]
+                ]
+            }
+        })
+        dbcon();
+    })
+})
+
+bot.action('S9b', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let moodsurveyS9= "b";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION 9
+    ID: ${ctx.chat.id}
+    Mood: ${moodsurveyS9}`);
+    var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s9) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS9}')`;
+    conn.query(sql, function(err, result){
+        if(err){
+            throw err;
+        };
+        console.log(`data S9 "${moodsurveyS9}" berhasil ditambahkan ke database`)
+        ctx.reply(`👇🏻`,
+        {
+            reply_markup: {
+                inline_keyboard: [
+                    [
+                        {text: 'Seterusnya', callback_data: 'S_10'}
+                    ]
+                ]
+            }
+        })
+        dbcon();
+    })
+})
+
+bot.action('S9c', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let moodsurveyS9= "c";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION 9
+    ID: ${ctx.chat.id}
+    Mood: ${moodsurveyS9}`);
+    var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s9) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS9}')`;
+    conn.query(sql, function(err, result){
+        if(err){
+            throw err;
+        };
+        console.log(`data S9 "${moodsurveyS9}" berhasil ditambahkan ke database`)
+        ctx.reply(`👇🏻`,
+        {
+            reply_markup: {
+                inline_keyboard: [
+                    [
+                        {text: 'Seterusnya', callback_data: 'S_10'}
+                    ]
+                ]
+            }
+        })
+        dbcon();
+    })
+})
+
+bot.action('S9d', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let moodsurveyS9= "d";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION 9
+    ID: ${ctx.chat.id}
+    Mood: ${moodsurveyS9}`);
+    var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s9) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS9}')`;
+    conn.query(sql, function(err, result){
+        if(err){
+            throw err;
+        };
+        console.log(`data S9 "${moodsurveyS9}" berhasil ditambahkan ke database`)
         ctx.reply(`👇🏻`,
         {
             reply_markup: {
@@ -680,21 +1476,29 @@ bot.command('S9', ctx => {
 
 bot.action('S_10', ctx => {
     ctx.deleteMessage();
-    bot.telegram.sendMessage(ctx.chat.id, `Sila jawab soalan dengan /S10 *jawapan* Contoh: /S10 ya
-
-    Soalan 10:
-    Adakah anda ok pada ketika ini?
-    (ya/tidak)`);
+    ctx.reply(`
+    💫 Soalan 10:
+        Adakah anda ok pada ketika ini?`,
+    {
+        reply_markup: {
+            inline_keyboard: [
+                [
+                    {text: 'Ya', callback_data: 'S10Y'},
+                    {text: 'Tidak', callback_data: 'S10N'}                    
+                ]
+            ]
+        }
+    })
 })
 
-bot.command('S10', ctx => {
-    let input = ctx.message.text.split(" ");
-    if(input.length != 2){
-        ctx.reply("Anda harus memberi nama mood pada argument ke 2");
-        return;
-    }
-    let moodsurveyS10= input[1];
-    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S10
+bot.action('S10Y', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let moodsurveyS10= "Ya";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION 10
     ID: ${ctx.chat.id}
     Mood: ${moodsurveyS10}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s10) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS10}')`;
@@ -702,7 +1506,7 @@ bot.command('S10', ctx => {
         if(err){
             throw err;
         };
-        console.log(`data "${moodsurveyS10}" berhasil ditambahkan ke database`)
+        console.log(`data S10 "${moodsurveyS10}" berhasil ditambahkan ke database`)
         ctx.reply(`👇🏻`,
         {
             reply_markup: {
@@ -717,11 +1521,44 @@ bot.command('S10', ctx => {
     })
 })
 
+bot.action('S10N', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let moodsurveyS10= "Tidak";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION 10
+    ID: ${ctx.chat.id}
+    Mood: ${moodsurveyS10}`);
+    var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, s10) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyS10}')`;
+    conn.query(sql, function(err, result){
+        if(err){
+            throw err;
+        };
+        console.log(`data S10 "${moodsurveyS10}" berhasil ditambahkan ke database`)
+        ctx.reply(`👇🏻`,
+        {
+            reply_markup: {
+                inline_keyboard: [
+                    [
+                        {text: 'Seterusnya', callback_data: 'S_11'}
+                    ]
+                ]
+            }
+        })
+        dbcon();
+    })
+})
+
+
 bot.action('S_11', ctx => {
     ctx.deleteMessage();
-    bot.telegram.sendMessage(ctx.chat.id, `Sila jawab soalan dengan /S11 *jawapan* Contoh: /S11 21
-    Soalan 11:
-    Berapakah umur anda?`);
+    ctx.reply(`
+    💫 Soalan 11:
+        Berapakah umur anda?
+        Sila taip /S11 *umur anda* Contoh: /S11 23`
+    );
 })
 
 bot.command('S11', ctx => {
@@ -731,7 +1568,7 @@ bot.command('S11', ctx => {
         return;
     }
     let moodsurveyAge= input[1];
-    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION S11
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `REPORT OF A USER FROM SURVEY QUESTION 11
     ID: ${ctx.chat.id}
     Mood: ${moodsurveyAge}`);
     var sql = `INSERT INTO moodsurvey (telegram_id, first_name, username, Age) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${moodsurveyAge}')`;
@@ -739,7 +1576,7 @@ bot.command('S11', ctx => {
         if(err){
             throw err;
         };
-        console.log(`data "${moodsurveyAge}" berhasil ditambahkan ke database`)
+        console.log(`data S11 "${moodsurveyAge}" berhasil ditambahkan ke database`)
         ctx.reply(`👇🏻`,
         {
             reply_markup: {
@@ -779,41 +1616,77 @@ bot.action('nak', ctx => {
         reply_markup: {
             inline_keyboard: [
                 [
-                    { text: 'Nak (taip /fortune)', callback_data: 'fortune'},
-                    { text: 'Tidak mengapa', callback_data: 'bye'}
+                    { text: 'Nak', callback_data: 'fortune'},
+                    { text: 'Tidak mengapa', callback_data: 'help'}
                 ]
             ]
         }
     });    
 })
 
-bot.command('fortune', ctx => {
+bot.action('fortune', ctx => {
+    ctx.reply(`Apa pendapat awak mengenai perbualan hari ini?`,
+    {
+        reply_markup: {
+            inline_keyboard: [
+                [
+                    { text: 'Baik ', callback_data: 'baik'},
+                    { text: 'Tidak Baik', callback_data: 'tidakbaik'}
+                ]
+            ]
+            
+        }
+    })   
    axios.get('http://yerkee.com/api/fortune')
    .then(res => {
        ctx.reply(res.data.fortune);
    }).catch(e => {
        console.log(e);
    })
-   bot.telegram.sendMessage(ctx.chat.id, 'Apa pendapat awak mengenai perbualan hari ini? (Baik/TidakBaik) Contoh: /feedback Baik');       
+       
 })
 
 //random quotes//
 
 //feedback//
-bot.command('feedback', ctx => {
-    let input = ctx.message.text.split(" ");
-    if(input.length != 2){
-        ctx.reply("Anda harus memberi nama mood pada argument ke 2");
-        return;
-    }
-    let feedbackFeedback= input[1];
+bot.action('baik', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let feedbackFeedback= "baik";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `FEEDBACK
+    ID: ${ctx.chat.id}
+    Mood: ${feedbackFeedback}`);
     var sql = `INSERT INTO feedback (telegram_id, first_name, username, feedback) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${feedbackFeedback}')`;
     conn.query(sql, function(err, result){
         if(err){
             throw err;
         };
-        console.log(`data "${feedbackFeedback}" berhasil ditambahkan ke database`)
-        ctx.reply(`👍🏻`);
+        console.log(`data feedback "${feedbackFeedback}" berhasil ditambahkan ke database`)
+        bot.telegram.sendMessage(`👍🏻`);
+        ctx.reply(helpMessage);
+        dbcon();
+    })
+})
+bot.action('tidakbaik', ctx => {
+    // let input = ctx.message.text.split(" ");
+    // if(input.length != 2){
+    //     ctx.reply("Anda harus memberi nama mood pada argument ke 2");
+    //     return;
+    // }
+    let feedbackFeedback= "tidak baik";
+    bot.telegram.sendMessage(`@DidoBotAdmin`, `FEEDBACK
+    ID: ${ctx.chat.id}
+    Mood: ${feedbackFeedback}`);
+    var sql = `INSERT INTO feedback (telegram_id, first_name, username, feedback) VALUES ('${ctx.chat.id}', '${ctx.chat.first_name}', '${ctx.chat.username}', '${feedbackFeedback}')`;
+    conn.query(sql, function(err, result){
+        if(err){
+            throw err;
+        };
+        console.log(`data feedback "${feedbackFeedback}" berhasil ditambahkan ke database`)
+        bot.telegram.sendMessage(`👍🏻`);
         ctx.reply(helpMessage);
         dbcon();
     })
