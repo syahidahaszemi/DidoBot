@@ -131,9 +131,6 @@ const helpMessage = `
     Untuk kata kata rawak:
     /fortune
 
-    Untuk feedback:
-    /feedback
-
     Untuk akhirkan perbualan:
     /bye
 `;
@@ -1624,6 +1621,28 @@ bot.action('nak', ctx => {
 })
 
 bot.action('fortune', ctx => {
+    ctx.reply(`Apa pendapat awak mengenai perbualan hari ini?`,
+    {
+        reply_markup: {
+            inline_keyboard: [
+                [
+                    { text: 'Baik ', callback_data: 'baik'},
+                    { text: 'Tidak Baik', callback_data: 'tidakbaik'}
+                ]
+            ]
+            
+        }
+    })   
+   axios.get('http://yerkee.com/api/fortune')
+   .then(res => {
+       ctx.reply(res.data.fortune);
+   }).catch(e => {
+       console.log(e);
+   })
+       
+})
+
+bot.command('fortune', ctx => {
     ctx.reply(`Apa pendapat awak mengenai perbualan hari ini?`,
     {
         reply_markup: {
