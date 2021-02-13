@@ -132,8 +132,7 @@ const helpMessage = `
     /fortune
 
     Untuk feedback:
-    /feedback Baik
-    /feedback TidakBaik
+    /feedback
 
     Untuk akhirkan perbualan:
     /bye
@@ -557,7 +556,7 @@ bot.action('moodsurvey', ctx => {
                     { text: 'Tidak mengapa lah', callback_data: 'tidak'}
                 ],
                 [
-                    { text: `Saya nak borak dengan Dido (taip /borak)`, callback_data: 'borak'}
+                    { text: `Saya nak borak dengan Dido`, callback_data: 'borak2'}
                 ]
             ] 
         }
@@ -565,7 +564,6 @@ bot.action('moodsurvey', ctx => {
 })
 
 bot.action('S_1', ctx => {
-    ctx.deleteMessage();
     ctx.reply(`
     💫 Soalan 1:
         Jadi, anda sekarang ada ahli terapi? (ya/tidak)`,
@@ -598,16 +596,16 @@ bot.action('S1Y', ctx => {
             throw err;
         };
         console.log(`data S1 "${moodsurveyS1}" berhasil ditambahkan ke database`)
-        ctx.reply(`👇🏻`,
-        {
-            reply_markup: {
-                inline_keyboard: [
-                    [
-                        {text: 'Seterusnya', callback_data: 'S_2'}
-                    ]
-                ]
-            }
-        })
+        // ctx.reply(`👇🏻`,
+        // {
+        //     reply_markup: {
+        //         inline_keyboard: [
+        //             [
+        //                 {text: 'Seterusnya', callback_data: 'S_2'}
+        //             ]
+        //         ]
+        //     }
+        // })
         dbcon();
     })
 })
@@ -628,16 +626,17 @@ bot.action('S1N', ctx => {
             throw err;
         };
         console.log(`data S1 "${moodsurveyS1}" berhasil ditambahkan ke database`)
-        ctx.reply(`👇🏻`,
-        {
-            reply_markup: {
-                inline_keyboard: [
-                    [
-                        {text: 'Seterusnya', callback_data: 'S_2'}
-                    ]
-                ]
-            }
-        })
+        ctx.reply(`S_2`);
+        // ctx.reply(`👇🏻`,
+        // {
+        //     reply_markup: {
+        //         inline_keyboard: [
+        //             [
+        //                 {text: 'Seterusnya', callback_data: 'S_2'}
+        //             ]
+        //         ]
+        //     }
+        // })
         dbcon();
     })
 })
