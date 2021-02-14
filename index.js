@@ -590,16 +590,16 @@ bot.action('S1Y', ctx => {
             throw err;
         };
         console.log(`data S1 "${moodsurveyS1}" berhasil ditambahkan ke database`)
-        ctx.reply(`👇🏻`,
-        {
-            reply_markup: {
-                inline_keyboard: [
-                    [
-                        {text: 'Seterusnya', callback_data: 'S_2'}
-                    ]
-                ]
-            }
-        })
+        // ctx.reply(`👇🏻`,
+        // {
+        //     reply_markup: {
+        //         inline_keyboard: [
+        //             [
+        //                 {text: 'Seterusnya', callback_data: 'S_2'}
+        //             ]
+        //         ]
+        //     }
+        // })
         dbcon();
     })
 })
@@ -620,17 +620,17 @@ bot.action('S1N', ctx => {
             throw err;
         };
         console.log(`data S1 "${moodsurveyS1}" berhasil ditambahkan ke database`)
-        ctx.reply(`S_2`);
-        ctx.reply(`👇🏻`,
-        {
-            reply_markup: {
-                inline_keyboard: [
-                    [
-                        {text: 'Seterusnya', callback_data: 'S_2'}
-                    ]
-                ]
-            }
-        })
+        ctx.reply(`${S_2}`);
+        // ctx.reply(`👇🏻`,
+        // {
+        //     reply_markup: {
+        //         inline_keyboard: [
+        //             [
+        //                 {text: 'Seterusnya', callback_data: 'S_2'}
+        //             ]
+        //         ]
+        //     }
+        // })
         dbcon();
     })
 })
