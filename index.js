@@ -180,10 +180,10 @@ bot.mention('DepressingBot', ctx => {
 
 })
 
-bot.action('start', ctx => {
-    ctx.deleteMessage();
-    sendStartMessage(ctx);
-})
+// bot.action('start', ctx => {
+//     ctx.deleteMessage();
+//     sendStartMessage(ctx);
+// })
 //welcome//
 
 //soalan//
