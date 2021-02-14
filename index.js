@@ -128,9 +128,6 @@ const helpMessage = `
     Untuk borak dan tips:
     /borak
 
-    Untuk kata kata rawak:
-    /fortune
-
     Untuk akhirkan perbualan:
     /bye
 `;
