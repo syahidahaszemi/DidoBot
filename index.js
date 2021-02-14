@@ -590,7 +590,7 @@ bot.action('S1Y', ctx => {
             throw err;
         };
         console.log(`data S1 "${moodsurveyS1}" berhasil ditambahkan ke database`)
-        ctx.reply(S_2);
+        ctx.reply(`S_2`);
         // {
         //     reply_markup: {
         //         inline_keyboard: [
@@ -620,7 +620,7 @@ bot.action('S1N', ctx => {
             throw err;
         };
         console.log(`data S1 "${moodsurveyS1}" berhasil ditambahkan ke database`)
-        ctx.reply(S_2);
+        ctx.reply(`S_2`);
         // ctx.reply(`👇🏻`,
         // {
         //     reply_markup: {
@@ -635,9 +635,7 @@ bot.action('S1N', ctx => {
     })
 })
 
-bot.action('S_2', ctx => {
-    ctx.deleteMessage();
-    
+bot.action('S_2', ctx => {  
     ctx.reply(`
     💫 Soalan 2:
         Adakah doktor atau ahli terapi anda sarankan aplikasi mudah alih?`,
@@ -714,8 +712,6 @@ bot.action('S2N', ctx => {
 })
 
 bot.action('S_3', ctx => {
-    ctx.deleteMessage();
-    
     ctx.reply(`
     💫 Soalan 3:
         Adakah anda pernah didiagnosis dengan keadaan kesihatan mental? (ya/tidak)`,
@@ -792,7 +788,6 @@ bot.action('S3N', ctx => {
 })
 
 bot.action('S_4', ctx => {
-    ctx.deleteMessage();
     ctx.reply(`
     💫 Soalan 4:
         Adakah anda sedang mengambil ubat-ubatan untuk keadaan kesihatan mental? (ya/tidak)`, 
@@ -869,7 +864,6 @@ bot.action('S4N', ctx => {
 })
 
 bot.action('S_5', ctx => {
-    ctx.deleteMessage();
     ctx.reply(`
     💫 Soalan 5:
         Adakah anda pernah mengguna aplikasi seperti Dido ini? (ya/tidak)`, 
@@ -946,7 +940,6 @@ bot.action('S5N', ctx => {
 })
 
 bot.action('S_6', ctx => {
-    ctx.deleteMessage();
     ctx.reply(`
     💫 Soalan 6:
         Adakah anda rasa Dido dapat membantu anda? (ya/tidak)`,
@@ -1023,7 +1016,6 @@ bot.action('S6N', ctx => {
 })
 
 bot.action('S_7', ctx => {
-    ctx.deleteMessage();
     ctx.reply(`
     💫 Soalan 7:
         Okay, sekarang saya akan tanya soalan khusus tentang apa yang anda rasa
@@ -1173,7 +1165,6 @@ bot.action('S7d', ctx => {
 })
 
 bot.action('S_8', ctx => {
-    ctx.deleteMessage();
     ctx.reply(`
     💫 Soalan 8:
         Dan sejak 2 minggu kebelakangan ini, berapa kali anda terganggu dengan perasaan sedih, murung, atau putus asa?
@@ -1320,7 +1311,6 @@ bot.action('S8d', ctx => {
 })
 
 bot.action('S_9', ctx => {
-    ctx.deleteMessage();
     ctx.reply(`
     💫 Soalan 9:
         Dan sejak 2 minggu kebelakangan ini, berapa kali anda terganggu dengan perasaan gelisah, gementar, terdesak, atau tidak dapat berhenti atau mengawal kebimbangan?
@@ -1468,7 +1458,6 @@ bot.action('S9d', ctx => {
 })
 
 bot.action('S_10', ctx => {
-    ctx.deleteMessage();
     ctx.reply(`
     💫 Soalan 10:
         Adakah anda ok pada ketika ini?`,
@@ -1546,7 +1535,6 @@ bot.action('S10N', ctx => {
 
 
 bot.action('S_11', ctx => {
-    ctx.deleteMessage();
     ctx.reply(`
     💫 Soalan 11:
         Berapakah umur anda?
