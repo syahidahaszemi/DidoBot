@@ -224,7 +224,7 @@ bot.action('boleh', ctx => {
 
 //mood//
 bot.command('startmood', ctx => { 
-    bot.telegram.sendMessage(ctx.chat.id, `Apa perasaan awak pada ketika ini?`,
+    bot.telegram.sendMessage(ctx.chat.id, `Apa perasaan awak pada ketika ini? 🌙`,
     {
         reply_markup: {
             inline_keyboard: [
