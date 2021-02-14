@@ -1,0 +1,21 @@
+{
+  "name": "didobot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "micro-bot"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "git": "^0.1.5",
+    "micro-bot": "^2.5.3",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.7",
+    "telegraf": "^3.38.0"
+  }
+}
