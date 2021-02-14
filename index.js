@@ -620,7 +620,7 @@ bot.action('S1N', ctx => {
             throw err;
         };
         console.log(`data S1 "${moodsurveyS1}" berhasil ditambahkan ke database`)
-        ctx.reply(`${S_2}`);
+        bot.telegram.sendMessage(`S_2`);
         // ctx.reply(`👇🏻`,
         // {
         //     reply_markup: {
